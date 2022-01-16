@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rubén Sedeño | Front-end Developer</title>
+
+    <!-- My styles -->
+    <link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="css/animated_menu.css" type="text/css" media="all" />
+    <!-- <link rel="stylesheet" href="css/animated_background.css" type="text/css" media="all" /> -->
+    <link rel="stylesheet" href="css/animated_logo.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="css/cards.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="css/media_queries.css" type="text/css" media="all" />
+    <!-- Fontawesome -->
+    <link
+      rel="stylesheet"
+      href="node_modules/@fortawesome/fontawesome-free/css/all.css"
+      type="text/css"
+      media="all"
+    />
+    <script defer src="node_modules/@fortawesome/fontawesome-free/js/all.js"></script>
+    <!-- My js -->
+    <script defer src="js/js.js"></script>
+    <script defer src="js/intro_textGenerator.js"></script>
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="assets/logo/logo.svg" type="image/png" />
+  </head>
+  <body>
+    <header class="flex header fl-align-items-center">
+      <a class="flex logo-container fl-align-items-center" href="#home">
+        <img class="logo-img" src="assets/logo/logo.svg" />
+        <span id="logo-name" class="blue weight-800"
+          >Rubén <span class="hide-in-mobile">Sedeño</span></span
+        >
+      </a>
+      <div class="flex fl-align-items-center nav-switch-container">
+        <nav id="nav-id" class="nav-class">
+          <ul id="ul" class="flex grey nav-list content">
+            <li class="nav-item weight-600"><a href="#about">About</a></li>
+            <li class="nav-item weight-600"><a href="#projects">Projects</a></li>
+            <li class="nav-item weight-600 blue"><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+        <div>
+          <input type="checkbox" id="dark-theme-switch" />
+          <label id="switch-label" class="flex fl-align-items-center" for="dark-theme-switch">
+            <i class="fas fa-sun"></i>
+            <i class="fas fa-moon"></i>
+            <i class="fas fa-cloud"></i>
+          </label>
+        </div>
+        <div class="menu-btn-container">
+          <input id="navi-toggle" type="checkbox" class="nav-checkbox" />
+          <label for="navi-toggle" class="nav-btn">
+            <span class="nav-icon">&nbsp;</span>
+          </label>
+          <div class="nav-background">&nbsp;</div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section id="home" class="flex wrap fl-align-items-center section-padding intro-section">
+        <div>
+          <p class="intro-large show-on-scroll">
+            Hi there,
+            <span id="span-br">
+              <span class="blue weight-800 highlighted">Rubén</span> coding here!</span
+            >
+          </p>
+          <p class="intro-large textGenerator-container show-on-scroll">
+            I'm a <span class="blue weight-800 highlighted typed-text">Front-end Developer</span
+            ><span class="cursor">&nbsp;</span>
+          </p>
+          <p class="intro-small grey show-on-scroll">Live, Love, Code & be Happy</p>
+          <div class="flex wrap intro-btn-container weight-600 show-on-scroll">
+            <a class="btn btn-left blue" href="#about">More about me</a>
+            <a class="btn btn-right blue" href="#projects">Projects</a>
+          </div>
+        </div>
+        <div class="flex wrap animated-logo-container show-on-scroll">
+          <div class="box-common small top-left"></div>
+          <div class="box-common big top-right"></div>
+          <div class="box-common big bottom-left"></div>
+          <div class="box-common small bottom-right"></div>
+        </div>
+      </section>
+      <section id="about" class="flex column fl-align-items-center section-padding about-section">
+        <div class="white-alws width-55vw">
+          <p class="title weight-600 show-on-scroll">Nice to meet you</p>
+          <p class="content show-on-scroll">
+            Let me introduce myself, I'm a tech passionate and a sport & nature lover, with an
+            innate curiosity that make me a self-taught multiple times. Perpetually working and
+            learning to leveling up one day at time.
+          </p>
+        </div>
+        <div class="about-section-content">
+          <div>
+            <p class="sub-title weight-600 blue show-on-scroll">Front-end Developer</p>
+            <p class="content show-on-scroll">
+              I'm very interested and looking forward to new challenges that will make me evolve as
+              a software developer. I have a strong interest in web development projects with
+              cutting-edge technologies that bring value to the humankind.
+            </p>
+          </div>
+          <div class="tech-container">
+            <p class="sub-title weight-600 blue show-on-scroll">Tools and technologies</p>
+            <p class="content show-on-scroll">
+              These are some tools and technologies that I am using or interested in learning.
+            </p>
+            <div class="flex wrap tech-container-img">
+              <img class="show-on-scroll" src="assets/tech/html5.svg" alt="html5 logo" />
+              <img class="show-on-scroll" src="assets/tech/css3.svg" alt="css3 logo" />
+              <img class="show-on-scroll" src="assets/tech/javascript.svg" alt="js logo" />
+              <img class="show-on-scroll" src="assets/tech/angular.svg" alt="angular logo" />
+              <img
+                class="show-on-scroll"
+                src="assets/tech/visual_studio.svg"
+                alt="visual studio logo"
+              />
+              <img class="show-on-scroll" src="assets/tech/github.svg" alt="github logo" />
+            </div>
+          </div>
+        </div>
+      </section>
+      <section
+        id="projects"
+        class="flex column fl-align-items-center section-padding projects-section"
+      >
+        <div class="width-55vw">
+          <p class="title weight-600 show-on-scroll">Projects</p>
+          <p class="content show-on-scroll">
+            Here are some projects I have worked on recently. A few belong to my learning path and
+            others I thought that it would be rewarding to build myself.
+          </p>
+        </div>
+        <div class="cards-container">
+          <div id="item1" class="show-on-scroll">
+            <img src="assets/icons/pc.svg" alt="" />
+          </div>
+          <div id="item2" class="flex card show-on-scroll">
+            <div class="flex column fl-align-items-center card-content">
+              <p class="title card-title weight-600">Personal Portfolio</p>
+              <p class="sub-title card-sub-title grey">freeCodeCamp</p>
+              <div class="content">
+                <p>
+                  The last project of the Responsive Web Design Certification putting together all
+                  the learnt knowledge, I used it as my real Personal Portfolio in fact
+                </p>
+                <p class="hashtags weight-600">
+                  <span class="html-color">#html</span> <span class="css-color">#css</span>
+                  <span class="js-color">#js</span>
+                </p>
+              </div>
+              <div class="flex wrap fl-justify-content-center weight-600 card-btn-container">
+                <a
+                  class="btn btn-left"
+                  href="https://codepen.io/rubensedev/full/LYLwQvE"
+                  target="_blank"
+                  >See Project</a
+                >
+                <!-- <a
+                  class="btn btn-right btn-github"
+                  href="https://github.com/rubensedev"
+                  target="_blank"
+                >
+                  <i class="fab fa-github"></i> GitHub</a
+                > -->
+              </div>
+            </div>
+          </div>
+          <div id="item3" class="flex card show-on-scroll">
+            <div class="flex column fl-align-items-center card-content">
+              <p class="title card-title weight-600">Technical Doc Page</p>
+              <p class="sub-title card-sub-title grey">freeCodeCamp</p>
+              <div class="content">
+                <p>A project from the Responsive Web Design Certification. Using CSS FLexbox</p>
+                <p class="hashtags weight-600">
+                  <span class="html-color">#html</span> <span class="css-color">#css</span>
+                </p>
+              </div>
+              <div class="flex wrap fl-justify-content-center weight-600 card-btn-container">
+                <a
+                  class="btn btn-left"
+                  href="https://codepen.io/rubensedev/full/jOwBXzG"
+                  target="_blank"
+                  >See Project</a
+                >
+              </div>
+            </div>
+          </div>
+          <div id="item4" class="flex card show-on-scroll">
+            <div class="flex column fl-align-items-center card-content">
+              <p class="title card-title weight-600">Product Landing Page</p>
+              <p class="sub-title card-sub-title grey">freeCodeCamp</p>
+              <div class="content">
+                <p>A project from the Responsive Web Design Certification. Using CSS FLexbox</p>
+                <p class="hashtags weight-600">
+                  <span class="html-color">#html</span> <span class="css-color">#css</span>
+                </p>
+              </div>
+              <div class="flex wrap fl-justify-content-center weight-600 card-btn-container">
+                <a
+                  class="btn btn-left"
+                  href="https://codepen.io/rubensedev/full/GRErrLg"
+                  target="_blank"
+                  >See Project</a
+                >
+              </div>
+            </div>
+          </div>
+          <div id="item5" class="flex card show-on-scroll">
+            <div class="flex column fl-align-items-center card-content">
+              <p class="title card-title weight-600">Sign Up Form</p>
+              <p class="sub-title card-sub-title grey">freeCodeCamp</p>
+              <div class="content">
+                <p>
+                  A project from the Responsive Web Design Certification. Using CSS FLexbox and CSS
+                  Grid
+                </p>
+                <p class="hashtags weight-600">
+                  <span class="html-color">#html</span> <span class="css-color">#css</span>
+                  <span class="js-color">#js</span>
+                </p>
+              </div>
+              <div class="flex wrap fl-justify-content-center weight-600 card-btn-container">
+                <a
+                  class="btn btn-left"
+                  href="https://codepen.io/rubensedev/full/MWobJrO"
+                  target="_blank"
+                  >See Project</a
+                >
+              </div>
+            </div>
+          </div>
+          <div id="itemn" class="show-on-scroll">
+            <img src="assets/icons/phone.svg" alt="" />
+          </div>
+        </div>
+      </section>
+      <section
+        id="contact"
+        class="flex column fl-align-items-center fl-justify-content-center section-padding contact-section"
+      >
+        <div class="width-55vw">
+          <p class="title weight-600 show-on-scroll">Do you need a developer?</p>
+          <p class="content show-on-scroll">
+            Do not hesitate to <span class="blue weight-600 hv-blueToGrey">contact me</span>, I'm
+            looking forward meeting you. I'm currently
+            <span class="blue weight-600 hv-blueToGrey">available</span> at:
+          </p>
+        </div>
+        <div class="flex column fl-align-items-center weight-600 contact-section-btns">
+          <div
+            class="flex wrap fl-align-items-center fl-justify-content-center contact-section-btns-social"
+          >
+            <a
+              class="btn btn-left btn-linkedin show-on-scroll"
+              href="https://www.linkedin.com/in/rubensedeno"
+              target="_blank"
+            >
+              <i class="fab fa-linkedin"></i> LinkedIn
+            </a>
+            <a
+              class="btn btn-right btn-github show-on-scroll"
+              href="https://github.com/rubensedev"
+              target="_blank"
+            >
+              <i class="fab fa-github"></i> GitHub
+            </a>
+          </div>
+          <a
+            class="btn btn-left btn-sendMsg show-on-scroll"
+            href="https://contact.do/Y0gS"
+            target="_blank"
+          >
+            <i class="fas fa-paper-plane"></i> Send me a message
+          </a>
+        </div>
+      </section>
+      <!-- <div class="position-absolute container circles">
+        <div class="sixty"></div>
+        <div class="twenty"></div>
+        <div class="twenty"></div>
+        <div class="sixty"></div>
+        <div class="twenty"></div>
+        <div></div>
+        <div class="one-hundred"></div>
+        <div></div>
+        <div></div>
+        <div class="one-hundred"></div>
+      </div> -->
+    </main>
+    <footer
+      class="flex wrap fl-align-items-center fl-align-items-center white-alws content-smaller footer-section"
+    >
+      <div></div>
+      <div>
+        <p>Handcrafted by me 🤲🛠️</p>
+        <div class="flex logo-container fl-align-items-center fl-justify-content-center">
+          <img class="logo-img" src="assets/logo/logo_white.svg" />
+          <p>Rubén Sedeño</p>
+        </div>
+        <p>©2022</p>
+      </div>
+      <div></div>
+    </footer>
+  </body>
+</html>

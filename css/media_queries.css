@@ -1,0 +1,197 @@
+/*laptop*/
+@media only screen and (max-width: 1024px) {
+  /* custom common classes */
+  .width-55vw {
+    width: 85vw;
+  }
+
+  /* header */
+  .header {
+    padding: 0 2rem;
+  }
+
+  /* intro-section */
+  .intro-section > div:first-child {
+    min-width: auto;
+  }
+
+  .intro-large,
+  .intro-small {
+    text-align: center;
+  }
+
+  /* intro buttons */
+  .intro-btn-container {
+    justify-content: center;
+  }
+
+  /* animated logo - boxes container */
+  .animated-logo-container {
+    margin: 0 10vw;
+  }
+
+  /* about-section */
+  .about-section-content {
+    width: 90vw;
+  }
+
+  /* projects section */
+  .cards-container {
+    gap: 6rem;
+  }
+}
+
+/*tablet*/
+@media only screen and (max-width: 900px) {
+  /* custom common classes */
+  /* font styles */
+  .title {
+    font-size: 3rem;
+  }
+  .sub-title {
+    font-size: 2.5rem;
+  }
+  .content {
+    font-size: 2rem;
+  }
+
+  /* header */
+  .header {
+    font-size: 2rem;
+  }
+  #logo-name {
+    font-size: 2.6rem;
+  }
+  .nav-switch-container {
+    gap: 2rem;
+  }
+  .nav-list {
+    gap: 2rem;
+  }
+
+  /* intro section */
+  .intro-large {
+    font-size: 4rem;
+  }
+  .intro-small {
+    font-size: 2rem;
+  }
+  .highlighted {
+    font-size: 5rem;
+  }
+
+  /* about-section */
+  .about-section-content {
+    padding-right: 2.5rem;
+    padding-left: 2.5rem;
+    margin-bottom: -35rem;
+  }
+  .tech-container-img {
+    padding: 0 1rem;
+    gap: 1rem;
+  }
+
+  /* projects section */
+  .card {
+    min-height: 62rem;
+  }
+
+  /* card buttons */
+  .card-btn-container {
+    flex-direction: column;
+  }
+}
+
+/*l-mobile*/
+@media only screen and (max-width: 700px) {
+  /* custom common classes */
+  .width-55vw {
+    width: 100%;
+  }
+
+  /* header */
+  .header {
+    height: 71px;
+    padding-right: 1rem;
+  }
+  .hide-in-mobile {
+    display: none;
+  }
+  .nav-switch-container {
+    gap: 0;
+  }
+
+  /* intro section */
+  .intro-large,
+  .intro-small {
+    text-align: center;
+  }
+  .intro-large {
+    font-size: 3rem;
+  }
+  .highlighted {
+    font-size: 3rem;
+  }
+
+  /* intro buttons */
+  .intro-small,
+  .intro-btn {
+    font-size: 1.8rem;
+  }
+
+  /* about-section */
+  .about-section-content {
+    margin-bottom: -55rem;
+  }
+
+  /* projects-section */
+  .projects-section {
+    margin-top: 50rem;
+    gap: 5rem;
+  }
+
+  .cards-container {
+    display: flex;
+    flex-direction: column;
+    grid-template-columns: unset;
+    grid-auto-rows: unset;
+    padding: 0 2.5rem;
+  }
+  .card {
+    min-height: 62rem;
+    padding: 0 1.5rem 5rem 1.5rem;
+  }
+
+  /* footer */
+  .footer-section {
+    height: 30vh;
+  }
+  .footer-section div {
+    width: 100%;
+  }
+}
+
+/* less than l-mobile */
+@media only screen and (max-width: 374px) {
+  /* contact buttons */
+  .contact-section-btns a {
+    width: 26rem;
+  }
+}
+
+/* orientation: landscape */
+@media only screen and (max-width: 900px) and (orientation: landscape) {
+  .intro-section {
+    height: 200vh;
+  }
+
+  .contact-section {
+    height: 130vh;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+
+  .footer-section {
+    height: 30vh;
+  }
+}
