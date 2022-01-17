@@ -1,0 +1,12 @@
+PARA NO OLVIDAR
+- Ver si incluir send me a message dentro del div de los otros botones (en ese caso poner "Email me")
+- Revisar link de contacto de contact.do
+
+- Añadir metatags para link de whatsapp
+
+COMPROBAR AL FINAL
+- REVISAR TODAS LAS MEDIA QUERIES
+
+AÑADIR FUTURO
+- Crear clases para los projects cards en js, y modules
+- Poner una cita de un personaje que me guste o incluso el proyecto de generador de citas de freecode camp en la parte de contacta conmigo.
