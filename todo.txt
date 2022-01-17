@@ -1,11 +1,13 @@
 PARA NO OLVIDAR
 - Ver si incluir send me a message dentro del div de los otros botones (en ese caso poner "Email me")
-- Revisar link de contacto de contact.do
+- Revisar link de contacto de contact.do, para que no salga el número servidor
+- Quitar logo móvil del menú y añadir ahí datos de contacto o ver qué añadir
 
-- Añadir metatags para link de whatsapp
+- REVISAR TODAS LAS MEDIA QUERIES
 
 COMPROBAR AL FINAL
-- REVISAR TODAS LAS MEDIA QUERIES
+- Ver si añadir themas con otros colores
+- Ver si añadir traducción web español
 
 AÑADIR FUTURO
 - Crear clases para los projects cards en js, y modules
