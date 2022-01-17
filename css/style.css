@@ -52,10 +52,6 @@ body {
   overflow-x: hidden;
 }
 
-h1 {
-  font-weight: inherit;
-}
-
 a {
   text-decoration: none;
   color: inherit;
