@@ -3,7 +3,7 @@ const toggleDarkTheme = document.querySelector('#dark-theme-switch');
 const root = document.documentElement;
 
 // check a specific media query to insert a break in a line
-const media400 = window.matchMedia('(max-width: 400px)');
+const media450 = window.matchMedia('(max-width: 450px)');
 const span = document.querySelector('#span-br');
 const br = document.createElement('br');
 
@@ -36,7 +36,7 @@ toggleDarkTheme.addEventListener('click', (e) => {
 
 // check a specific media query to insert a break after
 // Rubén in intro-section
-media400.onchange = (e) => { e.matches ? span.prepend(br) : br.remove(); }
+media450 ? span.prepend(br) : br.remove();
 
 // menu btn
 menuBtn.addEventListener('change', (e) => {
