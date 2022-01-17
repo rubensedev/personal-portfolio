@@ -315,7 +315,7 @@ img {
 #switch-label .fa-moon {
   color: var(--light-blue);
   font-size: 1.9rem;
-  transform: translateX(1.9rem);
+  transform: translateX(1.75rem);
   transition: 0.6s;
 }
 #switch-label .fa-sun {
