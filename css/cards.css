@@ -110,25 +110,25 @@
   margin-bottom: 2.8rem;
 }
 .html-color {
-  color: var(--html-color);
+  color: #ff6c39;
 }
 .html-color:hover,
 .html-color:active {
-  text-decoration: underline var(--html-color);
+  text-decoration: underline #ff6c39;
 }
 .css-color {
-  color: var(--css-color);
+  color: #35a8db;
 }
 .css-color:hover,
 .css-color:active {
-  text-decoration: underline var(--css-color);
+  text-decoration: underline #35a8db;
 }
 .js-color {
-  color: var(--js-color);
+  color: #f0db4f;
 }
 .js-color:hover,
 .js-color:active {
-  text-decoration: underline var(--js-color);
+  text-decoration: underline #f0db4f;
 }
 
 /* card buttons */

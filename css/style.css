@@ -13,9 +13,6 @@
   --bg-color-white: #f9f9ff;
   --grey: #75777f;
   --yellow: #ffba38;
-  --html-color: #ff6c39;
-  --css-color: #35a8db;
-  --js-color: #f0db4f;
   --html-font-size: 10px;
 }
 
@@ -452,8 +449,8 @@ img {
   padding-top: 0;
 }
 
-.hv-blueToGrey:hover,
-.hv-blueToGrey:active {
+.underline:hover,
+.underline:active {
   text-decoration: underline;
 }
 
@@ -476,6 +473,11 @@ img {
 .btn-github {
   border-color: #000;
   color: #000;
+}
+
+/* style inside a card project */
+.card-btn-container > a.btn-github {
+  color: var(--white-always);
 }
 
 .btn-github::after {
