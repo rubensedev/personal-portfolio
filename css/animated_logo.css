@@ -143,6 +143,7 @@
 
   /* boxes container */
   .animated-logo-container {
+    align-self: flex-start;
     width: 16rem;
   }
 
