@@ -153,7 +153,6 @@
     margin-top: 50rem;
     gap: 5rem;
   }
-
   .cards-container {
     display: flex;
     flex-direction: column;
@@ -164,6 +163,13 @@
   .card {
     min-height: 62rem;
     padding: 0 1.5rem 5rem 1.5rem;
+  }
+
+  /* contac section */
+  .contact-section-btns-social {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
   }
 
   /* footer */
@@ -182,9 +188,10 @@
     align-items: flex-start;
   }
 
-  /* contact buttons */
-  .contact-section-btns a {
-    width: 26rem;
+  /* contac section */
+  .contact-section {
+    min-height: 67rem;
+    gap: 2.5rem;
   }
 }
 

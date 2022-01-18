@@ -1,17 +1,16 @@
 PARA NO OLVIDAR
 + Mirar referencia de fontawesome
 
-- Añadiendo más espacio al intro-section y viendo qué ocurre en dispositivos pequeños media queries
-
 - Cambiar en el modo oscuro el texto de los botones a blanco
 
-- Ver si incluir send me a message dentro del div de los otros botones (en ese caso poner "Email me")
+- Revisar footer en media queries
+
 - Revisar link de contacto de contact.do, para que no salga el número servidor
 
 - Quitar logo animado del menú y añadir ahí datos de contacto o ver qué añadir
 
 COMPROBAR AL FINAL
-- REVISAR TODAS LAS MEDIA QUERIES
+- REVISAR TODAS LAS MEDIA QUERIES (landscape)
 
 AÑADIR FUTURO
 - Añadir botón con cambio de temas, nuevos colores

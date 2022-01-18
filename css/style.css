@@ -448,12 +448,10 @@ img {
   height: 100vh;
   padding-top: 0;
 }
-
 .underline:hover,
 .underline:active {
   text-decoration: underline;
 }
-
 .contact-section-btns,
 .contact-section-btns-social {
   gap: 2.5rem;
@@ -464,7 +462,6 @@ img {
   border-color: #0077b7;
   color: #0077b7;
 }
-
 .btn-linkedin::after {
   background-color: #0077b7;
 }
@@ -479,23 +476,20 @@ img {
 .card-btn-container > a.btn-github {
   color: var(--white-always);
 }
-
 .btn-github::after {
   background-color: #000;
 }
-
 .contact-section-btns-email {
   flex-direction: column;
 }
 
-/* send message button */
-.btn-sendMsg {
+/* send email button */
+.btn-email {
   width: 100%;
   border-color: var(--yellow);
   color: var(--yellow);
 }
-
-.btn-sendMsg::after {
+.btn-email::after {
   background-color: var(--yellow);
 }
 
@@ -504,15 +498,12 @@ img {
   background-color: var(--primary-color-blue);
   height: 25vh;
 }
-
 .footer-section div {
   width: 33.33%;
 }
-
 .footer-section .logo-container img {
   height: 2.4rem;
 }
-
 .footer-section div:nth-child(2) div {
   margin: 0 auto;
   padding: 2.5rem 0;
