@@ -32,26 +32,26 @@
 
 /* boxes styles */
 .top-left {
-  border-top-left-radius: 2rem;
+  border-top-left-radius: 1.5rem;
   border-bottom-right-radius: 0.5rem;
   animation-name: slide-top-left;
 }
 
 .top-right {
-  border-top-right-radius: 2rem;
+  border-top-right-radius: 1.5rem;
   border-bottom-left-radius: 0.5rem;
   animation-name: slide-top-right;
 }
 
 .bottom-right {
   border-top-left-radius: 0.5rem;
-  border-bottom-right-radius: 2rem;
+  border-bottom-right-radius: 1.5rem;
   animation-name: slide-bottom-right;
 }
 
 .bottom-left {
   border-top-right-radius: 0.5rem;
-  border-bottom-left-radius: 2rem;
+  border-bottom-left-radius: 1.5rem;
   animation-name: slide-bottom-left;
 }
 
@@ -144,5 +144,30 @@
   /* boxes container */
   .animated-logo-container {
     width: 16rem;
+  }
+
+  /* boxes animations */
+  @keyframes slide-top-left {
+    50% {
+      transform: translateY(-1rem) translateX(-1rem) rotate(10deg);
+    }
+  }
+
+  @keyframes slide-top-right {
+    50% {
+      transform: translateY(-2rem) translateX(1rem) rotate(-10deg);
+    }
+  }
+
+  @keyframes slide-bottom-left {
+    50% {
+      transform: translateY(2rem) translateX(-1rem) rotate(30deg);
+    }
+  }
+
+  @keyframes slide-bottom-right {
+    50% {
+      transform: translateY(0.5rem) translateX(2rem) rotate(-25deg);
+    }
   }
 }
