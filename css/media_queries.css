@@ -131,14 +131,16 @@
   .highlighted {
     font-size: 3rem;
   }
-
-  /* intro buttons */
-  .intro-btn-container {
-    gap: 1.5rem;
-  }
   .intro-small,
   .intro-btn {
     font-size: 1.8rem;
+  }
+
+  /* intro buttons */
+  .intro-btn-container {
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
   }
 
   /* about-section */
@@ -174,10 +176,10 @@
 }
 
 /* less than l-mobile */
-@media only screen and (max-width: 400px) {
-  /* intro buttons */
-  .intro-btn-container {
-    margin-bottom: 3rem;
+@media only screen and (max-width: 375px) {
+  /* intro section */
+  .intro-section {
+    align-items: flex-start;
   }
 
   /* contact buttons */
