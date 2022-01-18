@@ -1,12 +1,10 @@
 PARA NO OLVIDAR
 + Mirar referencia de fontawesome
 
-- Comprobando en js la parte en que se añade un espacio en home
-
 - Ver si incluir send me a message dentro del div de los otros botones (en ese caso poner "Email me")
 - Revisar link de contacto de contact.do, para que no salga el número servidor
 
-- Quitar logo móvil del menú y añadir ahí datos de contacto o ver qué añadir
+- Quitar logo animado del menú y añadir ahí datos de contacto o ver qué añadir
 
 COMPROBAR AL FINAL
 - REVISAR TODAS LAS MEDIA QUERIES

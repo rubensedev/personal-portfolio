@@ -4,6 +4,7 @@ const root = document.documentElement;
 
 // check a specific media query to insert a break in a line
 const media450 = window.matchMedia('(max-width: 450px)');
+const media300 = window.matchMedia('(min-width: 300px)');
 const span = document.querySelector('#span-br');
 const br = document.createElement('br');
 
@@ -34,9 +35,14 @@ toggleDarkTheme.addEventListener('click', (e) => {
     root.classList.toggle('dark-theme');
 });
 
-// check a specific media query to insert a break after
-// Rubén in intro-section
-media450 ? span.prepend(br) : br.remove();
+// check a specific media query to insert a break after Rubén in intro-section
+function addDeleteBr(e) {
+    e.matches ? span.prepend(br) : br.remove();;
+}
+// when media matches
+addDeleteBr(media450);
+// when media change
+media450.addEventListener('change', addDeleteBr);
 
 // menu btn
 menuBtn.addEventListener('change', (e) => {
