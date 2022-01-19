@@ -215,3 +215,10 @@
     min-height: 20rem;
   }
 }
+
+/* when laptops and pc screens detects landscapes media query */
+@media only screen and (min-height: 700px) {
+  .intro-section {
+    align-items: center;
+  }
+}
