@@ -3,6 +3,7 @@
 /* Custom properties/variables */
 :root {
   --primary-color-blue: #0058ca;
+  --blue-text-color: #0058ca;
   --light-blue: #d7e2ff;
   --light-blue-always: #d7e2ff;
   --dark-blue: #001945;
@@ -13,6 +14,7 @@
   --bg-color-white: #f9f9ff;
   --grey: #75777f;
   --yellow: #ffba38;
+  --black-text-color: #000;
   --html-font-size: 10px;
 }
 
@@ -21,6 +23,8 @@
   --dark-blue: #1a1c1e;
   --light-blue: #2f3032;
   --white: #1a1c1e;
+  --black-text-color: #fff;
+  --blue-text-color: #fff;
 }
 
 /* Base reset*/
@@ -404,6 +408,7 @@ img {
 .intro-btn-container {
   margin-top: 3rem;
   gap: 3rem;
+  color: var(--blue-text-color);
 }
 
 /* about-section */
@@ -467,22 +472,23 @@ img {
 }
 
 /* gitHub button */
-.btn-github {
+.btn-github,
+.btn-codepen {
   border-color: #000;
-  color: #000;
+  color: var(--black-text-color);
 }
-
 /* style inside a card project */
 .card-btn-container > a.btn-github {
   color: var(--white-always);
 }
-.btn-github::after {
+.btn-github::after,
+.btn-codepen::after {
   background-color: #000;
 }
+
 .contact-section-btns-email {
   flex-direction: column;
 }
-
 /* send email button */
 .btn-email {
   width: 100%;
