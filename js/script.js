@@ -52,8 +52,8 @@ menuBtn.addEventListener('change', (e) => {
         nav.classList.add('nav-checkbox-checked');
 
         // insert animated logo
-        nav.append(animatedLogoDiv);
-        animatedLogoDiv.classList.add('flex', 'wrap', 'animated-logo-container', 'animated-logo-container-menu');
+        // nav.append(animatedLogoDiv);
+        // animatedLogoDiv.classList.add('flex', 'wrap', 'animated-logo-container', 'animated-logo-container-menu');
 
         /* close menu when a section is clicked */
         // when header logo is clicked
