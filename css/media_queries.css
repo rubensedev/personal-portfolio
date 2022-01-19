@@ -241,4 +241,7 @@
   .intro-section {
     align-items: center;
   }
+  
+  .contact-section {
+    justify-content: center;
 }
