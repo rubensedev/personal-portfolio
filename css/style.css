@@ -245,6 +245,7 @@ img {
 }
 
 .logo-container {
+  width: 100%;
   gap: 1rem;
 }
 
@@ -502,15 +503,15 @@ img {
 /* footer */
 .footer-section {
   background-color: var(--primary-color-blue);
-  height: 25vh;
+  min-height: 25vh;
 }
-.footer-section div {
+.footer-section > div {
   width: 33.33%;
-}
-.footer-section .logo-container img {
-  height: 2.4rem;
 }
 .footer-section div:nth-child(2) div {
   margin: 0 auto;
   padding: 2.5rem 0;
+}
+.footer-section .logo-container img {
+  height: 2.4rem;
 }

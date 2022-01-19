@@ -129,7 +129,7 @@
 }
 
 /* less than l-mobile */
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 600px) {
   /* common style */
   .box-common {
     height: 7rem;

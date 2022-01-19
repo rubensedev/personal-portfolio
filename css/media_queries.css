@@ -123,7 +123,7 @@
 
   /* intro section */
   .intro-section {
-    min-height: 66.5rem;
+    min-height: 67rem;
   }
   .intro-large {
     font-size: 3rem;
@@ -176,7 +176,7 @@
   .footer-section {
     height: 30vh;
   }
-  .footer-section div {
+  .footer-section > div {
     width: 100%;
   }
 }
@@ -196,18 +196,13 @@
 }
 
 /* orientation: landscape */
-@media only screen and (max-width: 900px) and (orientation: landscape) {
-  .intro-section {
-    height: 200vh;
-  }
-
+@media only screen and (max-width: 700px) and (orientation: landscape) {
+  .intro-section,
   .contact-section {
-    height: 130vh;
-    padding-top: 5rem;
-    padding-bottom: 5rem;
+    min-height: 67rem;
   }
 
   .footer-section {
-    height: 30vh;
+    min-height: 20rem;
   }
 }
