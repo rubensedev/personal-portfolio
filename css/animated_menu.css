@@ -28,8 +28,13 @@
 
   /* menu */
   .nav-mobile {
-    opacity: 0;
-    transform: translateX(0) translateY(11rem);
+    position: absolute;
+    top: 9rem;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: auto;
+    transform: translateX(50rem);
     transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   }
   .nav-list {
@@ -41,13 +46,12 @@
   }
 
   /* FUNCTIONALITY */
-  /* c general sibling combinator, select all children*/
+  /* ~ general sibling combinator, select all children*/
   .nav-checkbox:checked ~ .nav-background {
     transform: scale(80);
   }
   .nav-checkbox-checked {
-    opacity: 1;
-    transform: translateX(2rem) translateY(11rem);
+    transform: translateX(0);
   }
 
   /* ICON */
@@ -55,17 +59,15 @@
   .nav-icon::before,
   .nav-icon::after {
     width: 3rem;
-    height: 2px;
+    height: 0.2rem;
     background-color: var(--grey);
     display: inline-block;
   }
-
   .nav-icon {
     width: 2rem;
     position: relative;
     margin-top: 3.5rem;
   }
-
   .nav-icon::before,
   .nav-icon::after {
     content: "";
@@ -73,11 +75,9 @@
     left: 0;
     transition: all 0.2s;
   }
-
   .nav-icon::before {
     top: -1rem;
   }
-
   .nav-icon::after {
     top: 1rem;
   }
