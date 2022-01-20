@@ -1,14 +1,16 @@
 PARA NO OLVIDAR
-+ Mirar referencia de fontawesome
-
-- Quitar logo animado del menú y añadir ahí datos de contacto o ver qué añadir
++ Añadiendo al menú botones de cambio de idioma y tema
+    - Mirar error en javascript
+    - Quitar código de haber quitado el logo animado del menu
+    https://codepen.io/rubensedev/pen/RwLmmrm?editors=1100
 
 COMPROBAR AL FINAL
-- REVISAR TODAS LAS MEDIA QUERIES (landscape)
 
 AÑADIR FUTURO
 - Añadir botón con cambio de temas, nuevos colores
 - Añadir traducción al español
 
 - Crear clases para los projects cards en js, y modules
-- Poner una cita de un personaje que me guste o incluso el proyecto de generador de citas de freecode camp en la parte de contacta conmigo.
+- Poner una cita de un personaje que me guste o incluso el proyecto de generador de citas de freecodecamp en la parte de contacta conmigo.
+
+- Crear blog de cada elementos de diseño en css
