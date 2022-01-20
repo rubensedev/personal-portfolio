@@ -293,7 +293,6 @@ img {
 #dark-theme-switch {
   display: none;
 }
-
 #switch-label {
   width: 6.5rem;
   height: 4rem;
@@ -309,12 +308,10 @@ img {
 #switch-label .fa-sun {
   transition: 0.4s;
 }
-
 #switch-label .fa-cloud,
 #switch-label .fa-sun {
   font-size: 2.2rem;
 }
-
 #dark-theme-switch:checked + label {
   transform: rotate(90deg);
 }
