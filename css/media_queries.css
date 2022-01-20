@@ -63,10 +63,14 @@
     font-size: 2.6rem;
   }
   .nav-switch-container {
-    gap: 2rem;
+    gap: 1rem;
   }
   .nav-list {
     gap: 2rem;
+  }
+  /* switch language - theme*/
+  .nav-item-lg-theme {
+    margin-left: 2rem;
   }
 
   /* intro-section */
@@ -241,7 +245,7 @@
   .intro-section {
     align-items: center;
   }
-  
+
   .contact-section {
     justify-content: center;
   }
