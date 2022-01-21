@@ -97,6 +97,39 @@ media700.onchange = (e) => {
     }
 }
 
+// btn theme switcher
+const outerContainer = document.querySelector(".outer-container");
+const palette = document.querySelector("#color-theme-switch");
+const bubblesContainer = document.querySelector("#bubbles-container");
+const radioBtns = bubblesContainer.querySelectorAll("input");
+const redBubble = document.querySelector("#red-theme-label");
+const blueBubble = document.querySelector("#blue-theme-label");
+const greenBubble = document.querySelector("#green-theme-label");
+
+palette.addEventListener("click", (e) => {
+    redBubble.classList.toggle("red-bubble-move");
+    blueBubble.classList.toggle("blue-bubble-move");
+    greenBubble.classList.toggle("green-bubble-move");
+});
+
+radioBtns.forEach((elem) => {
+    elem.addEventListener("click", (e) => {
+        switch (elem.value) {
+            case "red":
+                outerContainer.style.backgroundColor = "salmon";
+                console.log("red");
+                break;
+            case "blue":
+                outerContainer.style.backgroundColor = "lightblue";
+                break;
+            case "green":
+                outerContainer.style.backgroundColor = "lightgreen";
+                break;
+        }
+    });
+});
+
+
 // check if any element is in the viewport //
 function isAnyPartOfElementInViewport(element) {
     const rect = element.getBoundingClientRect();
