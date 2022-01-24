@@ -4,9 +4,9 @@
 :root {
   --primary-color-blue: #0058ca;
   --blue-text-color: #0058ca;
-  --light-blue: #d7e2ff;
-  --light-blue-always: #d7e2ff;
-  --dark-blue: #001945;
+  --light-blue: #aec6ff;
+  --light-blue-always: #aec6ff;
+  --dark-blue: #001947;
   --black: #1a1c1e;
   --black-always: #1a1c1e;
   --white: #fff;
@@ -26,10 +26,18 @@
   --blue-text-color: #fff;
 }
 .purple-theme {
-  --primary-color-blue: purple;
+  --primary-color-blue: #801cea;
 }
 .green-theme {
-  --primary-color-blue: green;
+  --primary-color-blue: #006c49;
+  --blue-text-color: #006c49;
+  --light-blue: #8cf7c3;
+  --dark-blue: #002113;
+  --black: #191c1a;
+  --black-always: #191c1a;
+  --yellow: #c1e9fb;
+  --grey: #707972;
+  --woma: #dce5dd; /* probar para el fondo del menú */
 }
 
 /* Base reset*/
@@ -53,7 +61,7 @@ html {
   color: var(--black);
   background-color: var(--white);
   scroll-behavior: smooth;
-  transition: background-color 0.5s ease-in-out;
+  transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
 }
 body {
   overflow-x: hidden;
@@ -323,19 +331,19 @@ input {
   transform: translateX(-3.5rem);
 }
 #switch-label .fa-moon {
-  color: var(--light-blue);
+  color: var(--light-blue-always);
   font-size: 1.9rem;
   transform: translateX(1.75rem);
   transition: 0.6s;
 }
 #switch-label .fa-sun {
-  color: var(--yellow);
+  color: #ffba38;
   transform: translateX(4.5rem);
   opacity: 0;
 }
 
 #dark-theme-switch:checked + label {
-  background-color: var(--primary-color-blue);
+  background-color: #0058ca;
 }
 #dark-theme-switch:checked + label .fa-cloud {
   color: var(--light-blue-always);
@@ -421,6 +429,7 @@ input {
 .about-section {
   gap: 8rem;
   background-color: var(--primary-color-blue);
+  transition: background-color 0.5s ease-in-out;
 }
 
 .about-section-content {
@@ -430,6 +439,7 @@ input {
   background-color: var(--light-blue);
   box-shadow: 0 0.5rem 1rem 0 rgb(0 0 0 / 60%);
   margin-bottom: -35rem;
+  transition: background-color 0.5s ease-in-out;
 }
 
 .tech-container {

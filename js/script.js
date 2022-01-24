@@ -98,6 +98,7 @@ media700.onchange = (e) => {
 }
 
 // btn theme switcher
+const themeSwitcherContainer = document.querySelector('#theme-switcher-container');
 const paletteBuble = document.querySelector('#color-theme-switch');
 const colorsBubblesContainer = document.querySelector('#bubbles-container');
 const radioBtns = colorsBubblesContainer.querySelectorAll('input');
@@ -105,11 +106,34 @@ const blueBubble = document.querySelector('#blue-theme-label');
 const purpleBubble = document.querySelector('#purple-theme-label');
 const greenBubble = document.querySelector('#green-theme-label');
 
-// activate palette bubble to show colors bubles
+// hide bubbles when clicked outside
+function hideBubbles(e) {
+    let divContainer = e.target;
+    // loop until parent div container reached
+    do {
+        if (divContainer == themeSwitcherContainer) {
+            return;
+        }
+        // go up the DOM until parent div container
+        divContainer = divContainer.parentNode;
+    } while (divContainer);
+    // uncheck palette bubble
+    paletteBuble.checked = false;
+    // hide color bubbles when clicked outside parent div container
+    blueBubble.classList.remove('blue-bubble-move');
+    purpleBubble.classList.remove('purple-bubble-move');
+    greenBubble.classList.remove('green-bubble-move');
+    // remove event listener when bubbles are hide
+    document.removeEventListener('click', hideBubbles);
+}
+
+// activate palette bubble to show colors bubbles
 paletteBuble.addEventListener('click', (e) => {
     blueBubble.classList.toggle('blue-bubble-move');
     purpleBubble.classList.toggle('purple-bubble-move');
     greenBubble.classList.toggle('green-bubble-move');
+    // check where clicked to close bubbles
+    document.addEventListener('click', hideBubbles);
 });
 
 // switch cases to change theme
