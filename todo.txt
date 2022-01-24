@@ -1,5 +1,6 @@
 PARA NO OLVIDAR
 + Añadiendo al menú botones de cambio de idioma y tema
+    - VER DIFERENTES POSIBILIDADES CON EL BOTÓN DE CAMBIO DE COLOR
     - Mirar error en javascript
     - Quitar código de haber quitado el logo animado del menu
     https://codepen.io/rubensedev/pen/RwLmmrm?editors=1100

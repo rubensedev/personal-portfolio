@@ -25,6 +25,12 @@
   --black-text-color: #fff;
   --blue-text-color: #fff;
 }
+.purple-theme {
+  --primary-color-blue: purple;
+}
+.green-theme {
+  --primary-color-blue: green;
+}
 
 /* Base reset*/
 * {
@@ -38,7 +44,6 @@
 *::after {
   box-sizing: inherit;
 }
-
 html {
   box-sizing: border-box;
   min-width: 28rem;
@@ -50,23 +55,22 @@ html {
   scroll-behavior: smooth;
   transition: background-color 0.5s ease-in-out;
 }
-
 body {
   overflow-x: hidden;
 }
-
 a {
   text-decoration: none;
   color: inherit;
 }
-
 ul {
   list-style: none;
 }
-
 img {
   display: block;
   width: 100%;
+}
+input {
+  display: none !important;
 }
 
 /* custom scrollbar */
@@ -290,9 +294,6 @@ img {
 }
 
 /* switch dark theme toggle */
-#dark-theme-switch {
-  display: none;
-}
 #switch-label {
   width: 6.5rem;
   height: 4rem;

@@ -98,32 +98,46 @@ media700.onchange = (e) => {
 }
 
 // btn theme switcher
-const outerContainer = document.querySelector(".outer-container");
-const palette = document.querySelector("#color-theme-switch");
-const bubblesContainer = document.querySelector("#bubbles-container");
-const radioBtns = bubblesContainer.querySelectorAll("input");
-const redBubble = document.querySelector("#red-theme-label");
-const blueBubble = document.querySelector("#blue-theme-label");
-const greenBubble = document.querySelector("#green-theme-label");
+const paletteBuble = document.querySelector('#color-theme-switch');
+const colorsBubblesContainer = document.querySelector('#bubbles-container');
+const radioBtns = colorsBubblesContainer.querySelectorAll('input');
+const blueBubble = document.querySelector('#blue-theme-label');
+const purpleBubble = document.querySelector('#purple-theme-label');
+const greenBubble = document.querySelector('#green-theme-label');
 
-palette.addEventListener("click", (e) => {
-    redBubble.classList.toggle("red-bubble-move");
-    blueBubble.classList.toggle("blue-bubble-move");
-    greenBubble.classList.toggle("green-bubble-move");
+// activate palette bubble to show colors bubles
+paletteBuble.addEventListener('click', (e) => {
+    blueBubble.classList.toggle('blue-bubble-move');
+    purpleBubble.classList.toggle('purple-bubble-move');
+    greenBubble.classList.toggle('green-bubble-move');
 });
 
+// switch cases to change theme
 radioBtns.forEach((elem) => {
-    elem.addEventListener("click", (e) => {
-        switch (elem.value) {
-            case "red":
-                outerContainer.style.backgroundColor = "salmon";
-                console.log("red");
+    elem.addEventListener('click', (e) => {
+        switch (root.classList.value) {
+            case '':
+                switch (elem.value) {
+                    case 'purple':
+                        root.classList.add('purple-theme');
+                        break;
+                    case 'green':
+                        root.classList.add('green-theme');
+                        break;
+                }
                 break;
-            case "blue":
-                outerContainer.style.backgroundColor = "lightblue";
-                break;
-            case "green":
-                outerContainer.style.backgroundColor = "lightgreen";
+            default:
+                switch (elem.value) {
+                    case 'blue':
+                        root.classList.remove(root.classList.value);
+                        break;
+                    case 'purple':
+                        root.classList.replace(root.classList.value, 'purple-theme');
+                        break;
+                    case 'green':
+                        root.classList.replace(root.classList.value, 'green-theme');
+                        break;
+                }
                 break;
         }
     });
@@ -143,14 +157,14 @@ let delay = 0;
 // making them visible while scrolling
 function scrollHandler() {
     document
-        .querySelectorAll(".show-on-scroll:not(.is-visible)")
+        .querySelectorAll('.show-on-scroll:not(.is-visible)')
         .forEach((element) => {
             setTimeout(function () {
                 if (
                     isAnyPartOfElementInViewport(element) &&
-                    !element.classList.contains("is-visible")
+                    !element.classList.contains('is-visible')
                 ) {
-                    element.classList.add("is-visible");
+                    element.classList.add('is-visible');
                 }
             }, delay);
 
@@ -158,7 +172,7 @@ function scrollHandler() {
         });
 }
 
-window.addEventListener("scroll", scrollHandler);
+window.addEventListener('scroll', scrollHandler);
 
 // call the scroll handler function at first load to show elements that
 // is already in the viewport
