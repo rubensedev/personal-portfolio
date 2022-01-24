@@ -105,6 +105,10 @@ const radioBtns = colorsBubblesContainer.querySelectorAll('input');
 const blueBubble = document.querySelector('#blue-theme-label');
 const purpleBubble = document.querySelector('#purple-theme-label');
 const greenBubble = document.querySelector('#green-theme-label');
+// imgs
+const headerLogo = document.querySelector('#header-logo');
+const projFirstItem = document.querySelector('#item1-img');
+const projLasttItem = document.querySelector('#itemn-img');
 
 // hide bubbles when clicked outside
 function hideBubbles(e) {
@@ -163,6 +167,16 @@ radioBtns.forEach((elem) => {
                         break;
                 }
                 break;
+        }
+        // change img src
+        if (elem.value === 'blue') {
+            headerLogo.setAttribute('src', 'assets/logo/logo.svg');
+            projFirstItem.setAttribute('src', 'assets/icons/pc.svg');
+            projLasttItem.setAttribute('src', 'assets/icons/phone.svg');
+        } else {
+            headerLogo.setAttribute('src', 'assets/logo/logo_' + elem.value + '.svg');
+            projFirstItem.setAttribute('src', 'assets/icons/pc_' + elem.value + '.svg');
+            projLasttItem.setAttribute('src', 'assets/icons/phone_' + elem.value + '.svg');
         }
     });
 });

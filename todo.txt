@@ -1,12 +1,11 @@
 PARA NO OLVIDAR
-+ Añadiendo al menú botones de cambio de idioma y tema
-    - VER DIFERENTES POSIBILIDADES CON EL BOTÓN DE CAMBIO DE COLOR
-    - Añadir transition a todo para el cambio de color: transition: background-color 0.5s ease-in-out;
++ Añadiendo al menú botón de cambio de tema
+    - CAMBIANDO A COLORES DEL MODO OSCURO
     - Mirar error en javascript
     - Quitar código de haber quitado el logo animado del menu
-    https://codepen.io/rubensedev/pen/RwLmmrm?editors=1100
 
 - Mirar menu y ensanchar los <a> dentro de los li
+- Mirar error safari
 
 COMPROBAR AL FINAL
 
