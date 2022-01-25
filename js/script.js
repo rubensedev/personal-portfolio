@@ -30,11 +30,6 @@ animatedLogoDiv.innerHTML = `<div class="box-common small top-left"></div>
                             <div class="box-common big bottom-left"></div>
                             <div class="box-common small bottom-right"></div>`;
 
-// change color for dark theme
-toggleDarkTheme.addEventListener('click', (e) => {
-    root.classList.toggle('dark-theme');
-});
-
 // check a specific media query to insert a break after Rubén in intro-section
 function addDeleteBr(e) {
     e.matches ? span.prepend(br) : br.remove();;
@@ -97,7 +92,8 @@ media700.onchange = (e) => {
     }
 }
 
-// btn theme switcher
+/** COLORS THEMES */
+// btns theme switcher
 const themeSwitcherContainer = document.querySelector('#theme-switcher-container');
 const paletteBuble = document.querySelector('#color-theme-switch');
 const colorsBubblesContainer = document.querySelector('#bubbles-container');
@@ -140,7 +136,18 @@ paletteBuble.addEventListener('click', (e) => {
     document.addEventListener('click', hideBubbles);
 });
 
-// switch cases to change theme
+function woma(className) {
+    for (let i = 0; i < className.length; i++) {
+        if (className[i] === ' ') {
+            // check only the first white space and get the class name
+            className = className.substring(0, i);
+            return className;
+        }
+    }
+    return className;
+}
+
+// switch cases to change color theme
 radioBtns.forEach((elem) => {
     elem.addEventListener('click', (e) => {
         switch (root.classList.value) {
@@ -151,6 +158,22 @@ radioBtns.forEach((elem) => {
                         break;
                     case 'green':
                         root.classList.add('green-theme');
+                        break;
+                }
+                break;
+            case woma(root.classList.value):
+                switch (elem.value) {
+                    case 'blue':
+                        root.classList.toggle('blue-theme');
+                        root.classList.toggle('blue-dark-theme');
+                        break;
+                    case 'purple':
+                        root.classList.toggle('purple-theme');
+                        root.classList.toggle('purple-dark-theme');
+                        break;
+                    case 'green':
+                        root.classList.toggle('green-theme');
+                        root.classList.toggle('green-dark-theme');
                         break;
                 }
                 break;
@@ -181,8 +204,43 @@ radioBtns.forEach((elem) => {
     });
 });
 
+// change color for dark theme
+toggleDarkTheme.addEventListener('click', (e) => {
+    // check root classes to only use the first class later for the switch
+    // let className = root.classList.value;
+    // for (let i = 0; i < className.length; i++) {
+    //     if (className[i] === ' ') {
+    //         // check only the first white space and get the class name
+    //         className = className.substring(0, i);
+    //         break;
+    //     }
+    // }
 
-// check if any element is in the viewport //
+    // always toggle dark theme
+    root.classList.toggle('dark-theme');
+    if (root.classList.value !== 'dark-theme' && root.classList.value !== '') {
+        switch (woma(root.classList.value)) {
+            case 'purple-theme':
+                root.classList.toggle('purple-dark-theme');
+                break;
+            case 'green-theme':
+                root.classList.toggle('green-dark-theme');
+                break;
+        }
+    }
+    // check for others colors themes
+    // switch (className) {
+    //     case 'purple-theme':
+    //         root.classList.toggle('purple-dark-theme');
+    //         break;
+    //     case 'green-theme':
+    //         root.classList.toggle('green-dark-theme');
+    //         break;
+    // }
+});
+
+
+// check if any element is in the viewport
 function isAnyPartOfElementInViewport(element) {
     const rect = element.getBoundingClientRect();
     const vertInView = rect.top <= windowHeight && rect.top + rect.height >= 0;

@@ -4,7 +4,8 @@
 :root {
   --primary-color-blue: #0058ca;
   --blue-text-color: #0058ca;
-  --light-blue: #aec6ff;
+  --blue-container: #0058ca;
+  --light-blue: #adc6ff;
   --light-blue-always: #d8e2ff;
   --dark-blue: #001947;
   --black: #1a1c1e;
@@ -18,17 +19,10 @@
   --html-font-size: 10px;
 }
 
-.dark-theme {
-  --black: #fff;
-  --dark-blue: #1a1c1e;
-  --light-blue: #2f3032;
-  --white: #1a1c1e;
-  --black-text-color: #fff;
-  --blue-text-color: #fff;
-}
 .purple-theme {
   --primary-color-blue: #801cea;
   --blue-text-color: #801cea;
+  --blue-container: #801cea;
   --light-blue: #eedbff;
   --dark-blue: #290056;
   --black: #1d1b1e;
@@ -37,14 +31,10 @@
   --dark-yellow: #4b252b;
   --grey: #707972;
 }
-.purple-dark-theme {
-  --dark-blue: #1d1b1e;
-  --light-blue: #2f3032; /* CAMBIAR ESTE*/
-  --white: #1d1b1e;
-}
 .green-theme {
   --primary-color-blue: #006c49;
   --blue-text-color: #006c49;
+  --blue-container: #006c49;
   --light-blue: #8cf7c3;
   --dark-blue: #002113;
   --black: #191c1a;
@@ -54,17 +44,32 @@
   --grey: #707972;
   --woma: #dce5dd; /* probar para el fondo del menú */
 }
+.dark-theme {
+  --black: #fff;
+  --blue-container: #002d6f;
+  --dark-blue: #1a1c1e;
+  --light-blue: #2f3032;
+  --white: #1a1c1e;
+  --black-text-color: #fff;
+  --blue-text-color: #fff;
+  --yellow: #442c00;
+  --dark-yellow: #ffba38;
+}
+.purple-dark-theme {
+  --blue-container: #440089;
+  --dark-blue: #1d1b1e;
+  --light-blue: #302f32;
+  --white: #1d1b1e;
+  --yellow: #4b252b;
+  --dark-yellow: #f2b7e1;
+}
 .green-dark-theme {
-  --primary-color-blue: #006c49;
-  --blue-text-color: #006c49;
-  --light-blue: #8cf7c3;
-  --dark-blue: #002113;
-  --black: #191c1a;
-  --black-always: #191c1a;
-  --yellow: #a5cdde;
-  --dark-yellow: #063543;
-  --grey: #707972;
-  --woma: #dce5dd; /* probar para el fondo del menú */
+  --blue-container: #003823;
+  --dark-blue: #191c1a;
+  --light-blue: #2f3231;
+  --white: #191c1a;
+  --yellow: #063543;
+  --dark-yellow: #a5cdde;
 }
 
 /* Base reset*/
@@ -444,7 +449,7 @@ input {
 /* about-section */
 .about-section {
   gap: 8rem;
-  background-color: var(--primary-color-blue);
+  background-color: var(--blue-container);
   transition: background-color 0.5s ease-in-out;
 }
 
@@ -524,19 +529,19 @@ input {
 /* send email button */
 .btn-email {
   width: 100%;
-  border-color: var(--dark-yellow);
+  border-color: var(--yellow);
   color: var(--dark-yellow);
 }
 .btn-email::after {
-  background-color: var(--dark-yellow);
+  background-color: var(--yellow);
 }
 .btn-email:hover {
-  color: var(--yellow);
+  color: var(--dark-yellow);
 }
 
 /* footer */
 .footer-section {
-  background-color: var(--primary-color-blue);
+  background-color: var(--blue-container);
   min-height: 25vh;
   transition: background-color 0.5s ease-in-out;
 }
