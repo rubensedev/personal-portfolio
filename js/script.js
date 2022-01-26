@@ -132,78 +132,68 @@ paletteBuble.addEventListener('click', (e) => {
     blueBubble.classList.toggle('blue-bubble-move');
     purpleBubble.classList.toggle('purple-bubble-move');
     greenBubble.classList.toggle('green-bubble-move');
-    // check where clicked to close bubbles
+    // check where clicked to hide bubbles
     document.addEventListener('click', hideBubbles);
 });
-
-function separateRootClasses(classes) {
-    classes.match(/([^\s]+)/g).forEach((themeClass) => {
-    });
-    // for (let i = 0; i < classes.length; i++) {
-    //     if (classes[i] === ' ') {
-    //         // check only the first white space and get the class name
-    //         classes = classes.substring(0, i);
-    //         return classes;
-    //     }
-    // }
-    // return classes;
-}
 
 // switch cases to change color theme
 radioBtns.forEach((elem) => {
     elem.addEventListener('click', (e) => {
         if (toggleDarkTheme.checked) {
-            root.classList.value.match(/([^\s]+)/g).forEach((themeClass) => {
-                switch (themeClass) {
-                    case 'dark-theme':
-                        root.classList.replace(themeClass, elem.value + '-theme');
-                        root.classList.add(themeClass, elem.value + '-dark-theme');
-                        break;
-                    default:
-                        root.classList.replace(themeClass, elem.value + '-theme');
-                        root.classList.add('dark-theme', elem.value + '-dark-theme');
-                        break;
-                }
-            });
-        } else {
-            switch (root.classList.value) {
-                case '':
-                    switch (elem.value) {
-                        case 'purple':
-                            root.classList.add('purple-theme');
-                            break;
-                        case 'green':
-                            root.classList.add('green-theme');
-                            break;
+            let colorThemeName = root.classList.value.substring(0, root.classList.value.indexOf('-'));
+            switch (colorThemeName) {
+                case 'dark':
+                    if (root.classList.value.includes('green') || root.classList.value.includes('purple')) {
+                        console.log(root.classList.value.match(/([\-]+|[^\s]+)/g));
+
+                        root.classList.remove(root.classList.value);
+                        root.classList.add(`${elem.value}-theme`);
+                        root.classList.add(`${elem.value}-dark-theme`);
+                    } else {
+                        root.classList.add(`${elem.value}-theme`);
+                        root.classList.add(`${elem.value}-dark-theme`);
                     }
+                    // call change img src function
+                    changeImg(elem.value, true);
                     break;
                 default:
-                    switch (elem.value) {
-                        case 'blue':
-                            root.classList.remove(root.classList.value);
-                            break;
-                        case 'purple':
-                            root.classList.replace(root.classList.value, 'purple-theme');
-                            break;
-                        case 'green':
-                            root.classList.replace(root.classList.value, 'green-theme');
-                            break;
-                    }
+                    root.classList.toggle(`${elem.value}-theme`);
+                    root.classList.toggle(`${elem.value}-dark-theme`);
                     break;
             }
-        }
-        // change img src
-        if (elem.value === 'blue') {
-            headerLogo.setAttribute('src', 'assets/logo/logo.svg');
-            projFirstItem.setAttribute('src', 'assets/icons/pc.svg');
-            projLasttItem.setAttribute('src', 'assets/icons/phone.svg');
         } else {
-            headerLogo.setAttribute('src', 'assets/logo/logo_' + elem.value + '.svg');
-            projFirstItem.setAttribute('src', 'assets/icons/pc_' + elem.value + '.svg');
-            projLasttItem.setAttribute('src', 'assets/icons/phone_' + elem.value + '.svg');
+            if (root.classList.value === '' && elem.value !== 'blue') {
+                root.classList.add(`${elem.value}-theme`);
+                // call change img src function
+                changeImg(elem.value, true);
+            } else {
+                let colorThemeName = root.classList.value.substring(0, root.classList.value.indexOf('-'));
+                // check if we click more than one time the same color to do nothing
+                if (elem.value != colorThemeName && colorThemeName != '') {
+                    if (elem.value === 'blue') {
+                        root.classList.remove(root.classList.value);
+                        // call change img src function
+                        changeImg('', false);
+                    } else {
+                        root.classList.replace(root.classList.value, `${elem.value}-theme`);
+                        // call change img src function
+                        changeImg(elem.value, true);
+                    }
+                }
+            }
         }
     });
 });
+
+// change img src
+function changeImg(radioBtnValue, underscoreYes) {
+    let underscore;
+    underscoreYes ? underscore = '_' : underscore = '';
+
+    headerLogo.setAttribute('src', `assets/logo/logo${underscore}${radioBtnValue}.svg`);
+    projFirstItem.setAttribute('src', `assets/icons/pc${underscore}${radioBtnValue}.svg`);
+    projLasttItem.setAttribute('src', `assets/icons/phone${underscore}${radioBtnValue}.svg`);
+}
 
 // change color for dark theme
 toggleDarkTheme.addEventListener('click', (e) => {
@@ -211,16 +201,9 @@ toggleDarkTheme.addEventListener('click', (e) => {
     root.classList.toggle('dark-theme');
     // check for others colors themes
     if (root.classList.value !== 'dark-theme' && root.classList.value !== '') {
-        root.classList.value.match(/([^\s]+)/g).forEach((themeClass) => {
-            switch (themeClass) {
-                case 'purple-theme':
-                    root.classList.toggle('purple-dark-theme');
-                    break;
-                case 'green-theme':
-                    root.classList.toggle('green-dark-theme');
-                    break;
-            }
-        });
+        //extract the color theme name from the root classes
+        let colorThemeName = root.classList.value.substring(0, root.classList.value.indexOf('-'));
+        root.classList.toggle(`${colorThemeName}-dark-theme`);
     }
 });
 

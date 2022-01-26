@@ -1,6 +1,6 @@
 PARA NO OLVIDAR
 + Añadiendo al menú botón de cambio de tema
-    - CAMBIANDO A COLORES DEL MODO OSCURO
+    - MIRANDO LAS VERTIENTES POR LAS QUE SE ACCEDE AL MODO OSCURO
     - Mirar error en javascript
     - Quitar código de haber quitado el logo animado del menu
 
