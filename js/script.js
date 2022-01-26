@@ -136,60 +136,61 @@ paletteBuble.addEventListener('click', (e) => {
     document.addEventListener('click', hideBubbles);
 });
 
-function woma(className) {
-    for (let i = 0; i < className.length; i++) {
-        if (className[i] === ' ') {
-            // check only the first white space and get the class name
-            className = className.substring(0, i);
-            return className;
-        }
-    }
-    return className;
+function separateRootClasses(classes) {
+    classes.match(/([^\s]+)/g).forEach((themeClass) => {
+    });
+    // for (let i = 0; i < classes.length; i++) {
+    //     if (classes[i] === ' ') {
+    //         // check only the first white space and get the class name
+    //         classes = classes.substring(0, i);
+    //         return classes;
+    //     }
+    // }
+    // return classes;
 }
 
 // switch cases to change color theme
 radioBtns.forEach((elem) => {
     elem.addEventListener('click', (e) => {
-        switch (root.classList.value) {
-            case '':
-                switch (elem.value) {
-                    case 'purple':
-                        root.classList.add('purple-theme');
+        if (toggleDarkTheme.checked) {
+            root.classList.value.match(/([^\s]+)/g).forEach((themeClass) => {
+                switch (themeClass) {
+                    case 'dark-theme':
+                        root.classList.replace(themeClass, elem.value + '-theme');
+                        root.classList.add(themeClass, elem.value + '-dark-theme');
                         break;
-                    case 'green':
-                        root.classList.add('green-theme');
-                        break;
-                }
-                break;
-            case woma(root.classList.value):
-                switch (elem.value) {
-                    case 'blue':
-                        root.classList.toggle('blue-theme');
-                        root.classList.toggle('blue-dark-theme');
-                        break;
-                    case 'purple':
-                        root.classList.toggle('purple-theme');
-                        root.classList.toggle('purple-dark-theme');
-                        break;
-                    case 'green':
-                        root.classList.toggle('green-theme');
-                        root.classList.toggle('green-dark-theme');
+                    default:
+                        root.classList.replace(themeClass, elem.value + '-theme');
+                        root.classList.add('dark-theme', elem.value + '-dark-theme');
                         break;
                 }
-                break;
-            default:
-                switch (elem.value) {
-                    case 'blue':
-                        root.classList.remove(root.classList.value);
-                        break;
-                    case 'purple':
-                        root.classList.replace(root.classList.value, 'purple-theme');
-                        break;
-                    case 'green':
-                        root.classList.replace(root.classList.value, 'green-theme');
-                        break;
-                }
-                break;
+            });
+        } else {
+            switch (root.classList.value) {
+                case '':
+                    switch (elem.value) {
+                        case 'purple':
+                            root.classList.add('purple-theme');
+                            break;
+                        case 'green':
+                            root.classList.add('green-theme');
+                            break;
+                    }
+                    break;
+                default:
+                    switch (elem.value) {
+                        case 'blue':
+                            root.classList.remove(root.classList.value);
+                            break;
+                        case 'purple':
+                            root.classList.replace(root.classList.value, 'purple-theme');
+                            break;
+                        case 'green':
+                            root.classList.replace(root.classList.value, 'green-theme');
+                            break;
+                    }
+                    break;
+            }
         }
         // change img src
         if (elem.value === 'blue') {
@@ -206,37 +207,21 @@ radioBtns.forEach((elem) => {
 
 // change color for dark theme
 toggleDarkTheme.addEventListener('click', (e) => {
-    // check root classes to only use the first class later for the switch
-    // let className = root.classList.value;
-    // for (let i = 0; i < className.length; i++) {
-    //     if (className[i] === ' ') {
-    //         // check only the first white space and get the class name
-    //         className = className.substring(0, i);
-    //         break;
-    //     }
-    // }
-
     // always toggle dark theme
     root.classList.toggle('dark-theme');
-    if (root.classList.value !== 'dark-theme' && root.classList.value !== '') {
-        switch (woma(root.classList.value)) {
-            case 'purple-theme':
-                root.classList.toggle('purple-dark-theme');
-                break;
-            case 'green-theme':
-                root.classList.toggle('green-dark-theme');
-                break;
-        }
-    }
     // check for others colors themes
-    // switch (className) {
-    //     case 'purple-theme':
-    //         root.classList.toggle('purple-dark-theme');
-    //         break;
-    //     case 'green-theme':
-    //         root.classList.toggle('green-dark-theme');
-    //         break;
-    // }
+    if (root.classList.value !== 'dark-theme' && root.classList.value !== '') {
+        root.classList.value.match(/([^\s]+)/g).forEach((themeClass) => {
+            switch (themeClass) {
+                case 'purple-theme':
+                    root.classList.toggle('purple-dark-theme');
+                    break;
+                case 'green-theme':
+                    root.classList.toggle('green-dark-theme');
+                    break;
+            }
+        });
+    }
 });
 
 
