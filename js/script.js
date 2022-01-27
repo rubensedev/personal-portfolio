@@ -101,6 +101,7 @@ const radioBtns = colorsBubblesContainer.querySelectorAll('input');
 const blueBubble = document.querySelector('#blue-theme-label');
 const purpleBubble = document.querySelector('#purple-theme-label');
 const greenBubble = document.querySelector('#green-theme-label');
+let classesArr = root.classList;
 // imgs
 const headerLogo = document.querySelector('#header-logo');
 const projFirstItem = document.querySelector('#item1-img');
@@ -140,42 +141,67 @@ paletteBuble.addEventListener('click', (e) => {
 radioBtns.forEach((elem) => {
     elem.addEventListener('click', (e) => {
         if (toggleDarkTheme.checked) {
-            let colorThemeName = root.classList.value.substring(0, root.classList.value.indexOf('-'));
-            switch (colorThemeName) {
-                case 'dark':
-                    if (root.classList.value.includes('green') || root.classList.value.includes('purple')) {
-                        console.log(root.classList.value.match(/([\-]+|[^\s]+)/g));
+            // create an array only with theme classes names
+            let classesNamesArr = classesArr.value.match(/[^\s]+/g);
 
-                        root.classList.remove(root.classList.value);
-                        root.classList.add(`${elem.value}-theme`);
-                        root.classList.add(`${elem.value}-dark-theme`);
-                    } else {
-                        root.classList.add(`${elem.value}-theme`);
-                        root.classList.add(`${elem.value}-dark-theme`);
+            // check if we click more than one time the same color to do nothing
+            if (!classesNamesArr.includes(`${elem.value}-theme`) && (classesNamesArr.length > 1 || elem.value !== 'blue')) {
+                if (classesNamesArr[0] === 'dark-theme') {
+                    if (classesNamesArr[1] === 'green-theme' || classesNamesArr[1] === 'purple-theme') {
+                        if (elem.value !== 'blue') {
+                            // only takes from array color themes to replace for
+                            // current bubble (radio-button) color
+                            classesArr.replace(classesNamesArr[1], `${elem.value}-theme`);
+                            classesArr.replace(classesNamesArr[2], `${elem.value}-dark-theme`);
+                            // call change img src function
+                            changeImg(elem.value, true);
+                        } else {
+                            classesArr.remove(classesNamesArr[1]);
+                            classesArr.remove(classesNamesArr[2]);
+                            // call change img src function
+                            changeImg('', false);
+                        }
+                    } else if (elem.value !== 'blue') {
+                        classesArr.add(`${elem.value}-theme`);
+                        classesArr.add(`${elem.value}-dark-theme`);
+                        // call change img src function
+                        changeImg(elem.value, true);
                     }
-                    // call change img src function
-                    changeImg(elem.value, true);
-                    break;
-                default:
-                    root.classList.toggle(`${elem.value}-theme`);
-                    root.classList.toggle(`${elem.value}-dark-theme`);
-                    break;
+                } else {
+                    if (elem.value !== 'blue') {
+                        // only takes from array color themes to replace for
+                        // current bubble (radio-button) color
+                        classesArr.replace(classesNamesArr[0], `${elem.value}-theme`);
+                        classesArr.replace(classesNamesArr[2], `${elem.value}-dark-theme`);
+                        // call change img src function
+                        changeImg(elem.value, true);
+                    } else {
+                        classesArr.remove(classesNamesArr[0]);
+                        classesArr.remove(classesNamesArr[2]);
+                        // call change img src function
+                        changeImg('', false);
+                    }
+                }
             }
         } else {
-            if (root.classList.value === '' && elem.value !== 'blue') {
-                root.classList.add(`${elem.value}-theme`);
+            // let colorThemeName = classesArr.value.substring(0, classesArr.value.indexOf('-'));
+            // if ((elem.value != colorThemeName && colorThemeName != '') || (classesArr.value === '' && elem.value === 'blue')) {
+            //     console.log("twice");
+            // }
+            if (classesArr.value === '' && elem.value !== 'blue') {
+                classesArr.add(`${elem.value}-theme`);
                 // call change img src function
                 changeImg(elem.value, true);
             } else {
-                let colorThemeName = root.classList.value.substring(0, root.classList.value.indexOf('-'));
+                let colorThemeName = classesArr.value.substring(0, classesArr.value.indexOf('-'));
                 // check if we click more than one time the same color to do nothing
                 if (elem.value != colorThemeName && colorThemeName != '') {
                     if (elem.value === 'blue') {
-                        root.classList.remove(root.classList.value);
+                        classesArr.remove(classesArr.value);
                         // call change img src function
                         changeImg('', false);
                     } else {
-                        root.classList.replace(root.classList.value, `${elem.value}-theme`);
+                        classesArr.replace(classesArr.value, `${elem.value}-theme`);
                         // call change img src function
                         changeImg(elem.value, true);
                     }
@@ -198,12 +224,12 @@ function changeImg(radioBtnValue, underscoreYes) {
 // change color for dark theme
 toggleDarkTheme.addEventListener('click', (e) => {
     // always toggle dark theme
-    root.classList.toggle('dark-theme');
+    classesArr.toggle('dark-theme');
     // check for others colors themes
-    if (root.classList.value !== 'dark-theme' && root.classList.value !== '') {
+    if (classesArr.value !== 'dark-theme' && classesArr.value !== '') {
         //extract the color theme name from the root classes
-        let colorThemeName = root.classList.value.substring(0, root.classList.value.indexOf('-'));
-        root.classList.toggle(`${colorThemeName}-dark-theme`);
+        let colorThemeName = classesArr.value.substring(0, classesArr.value.indexOf('-'));
+        classesArr.toggle(`${colorThemeName}-dark-theme`);
     }
 });
 
