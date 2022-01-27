@@ -23,6 +23,21 @@ const windowHeight =
     window.innerHeight || document.documentElement.clientHeight;
 const windowWidth = window.innerWidth || document.documentElement.clientWidth;
 
+/** COLOR THEME SWITCHER */
+// btns theme switcher
+const themeSwitcherContainer = document.querySelector('#theme-switcher-container');
+const paletteBuble = document.querySelector('#color-theme-switch');
+const colorsBubblesContainer = document.querySelector('#bubbles-container');
+const radioBtns = colorsBubblesContainer.querySelectorAll('input');
+const blueBubble = document.querySelector('#blue-theme-label');
+const purpleBubble = document.querySelector('#purple-theme-label');
+const greenBubble = document.querySelector('#green-theme-label');
+let classesArr = root.classList;
+// imgs
+const headerLogo = document.querySelector('#header-logo');
+const projFirstItem = document.querySelector('#item1-img');
+const projLasttItem = document.querySelector('#itemn-img');
+
 // insert an animated logo in menu when activated
 let animatedLogoDiv = document.createElement('div');
 animatedLogoDiv.innerHTML = `<div class="box-common small top-left"></div>
@@ -92,21 +107,7 @@ media700.onchange = (e) => {
     }
 }
 
-/** COLORS THEMES */
-// btns theme switcher
-const themeSwitcherContainer = document.querySelector('#theme-switcher-container');
-const paletteBuble = document.querySelector('#color-theme-switch');
-const colorsBubblesContainer = document.querySelector('#bubbles-container');
-const radioBtns = colorsBubblesContainer.querySelectorAll('input');
-const blueBubble = document.querySelector('#blue-theme-label');
-const purpleBubble = document.querySelector('#purple-theme-label');
-const greenBubble = document.querySelector('#green-theme-label');
-let classesArr = root.classList;
-// imgs
-const headerLogo = document.querySelector('#header-logo');
-const projFirstItem = document.querySelector('#item1-img');
-const projLasttItem = document.querySelector('#itemn-img');
-
+/** COLOR THEME SWITCHER */
 // hide bubbles when clicked outside
 function hideBubbles(e) {
     let divContainer = e.target;
@@ -184,10 +185,6 @@ radioBtns.forEach((elem) => {
                 }
             }
         } else {
-            // let colorThemeName = classesArr.value.substring(0, classesArr.value.indexOf('-'));
-            // if ((elem.value != colorThemeName && colorThemeName != '') || (classesArr.value === '' && elem.value === 'blue')) {
-            //     console.log("twice");
-            // }
             if (classesArr.value === '' && elem.value !== 'blue') {
                 classesArr.add(`${elem.value}-theme`);
                 // call change img src function
