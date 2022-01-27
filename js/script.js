@@ -33,6 +33,7 @@ const blueBubble = document.querySelector('#blue-theme-label');
 const purpleBubble = document.querySelector('#purple-theme-label');
 const greenBubble = document.querySelector('#green-theme-label');
 let classesArr = root.classList;
+let metaThemeColor = document.querySelector('meta[name="theme-color"]');
 // imgs
 const headerLogo = document.querySelector('#header-logo');
 const projFirstItem = document.querySelector('#item1-img');
@@ -187,6 +188,12 @@ radioBtns.forEach((elem) => {
         } else {
             if (classesArr.value === '' && elem.value !== 'blue') {
                 classesArr.add(`${elem.value}-theme`);
+                // change meta tag theme color
+                let html = document.querySelector('html');
+                let style = getComputedStyle(html);
+                // let color = style.
+                console.log(style);
+                metaThemeColor.setAttribute('content', 'woma');
                 // call change img src function
                 changeImg(elem.value, true);
             } else {
@@ -229,7 +236,6 @@ toggleDarkTheme.addEventListener('click', (e) => {
         classesArr.toggle(`${colorThemeName}-dark-theme`);
     }
 });
-
 
 // check if any element is in the viewport
 function isAnyPartOfElementInViewport(element) {
