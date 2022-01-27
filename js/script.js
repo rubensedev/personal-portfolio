@@ -23,17 +23,27 @@ const windowHeight =
     window.innerHeight || document.documentElement.clientHeight;
 const windowWidth = window.innerWidth || document.documentElement.clientWidth;
 
+/** COLOR THEME SWITCHER */
+// btns theme switcher
+const themeSwitcherContainer = document.querySelector('#theme-switcher-container');
+const paletteBuble = document.querySelector('#color-theme-switch');
+const colorsBubblesContainer = document.querySelector('#bubbles-container');
+const radioBtns = colorsBubblesContainer.querySelectorAll('input');
+const blueBubble = document.querySelector('#blue-theme-label');
+const purpleBubble = document.querySelector('#purple-theme-label');
+const greenBubble = document.querySelector('#green-theme-label');
+let classesArr = root.classList;
+// imgs
+const headerLogo = document.querySelector('#header-logo');
+const projFirstItem = document.querySelector('#item1-img');
+const projLasttItem = document.querySelector('#itemn-img');
+
 // insert an animated logo in menu when activated
 let animatedLogoDiv = document.createElement('div');
 animatedLogoDiv.innerHTML = `<div class="box-common small top-left"></div>
                             <div class="box-common big top-right"></div>
                             <div class="box-common big bottom-left"></div>
                             <div class="box-common small bottom-right"></div>`;
-
-// change color for dark theme
-toggleDarkTheme.addEventListener('click', (e) => {
-    root.classList.toggle('dark-theme');
-});
 
 // check a specific media query to insert a break after Rubén in intro-section
 function addDeleteBr(e) {
@@ -97,7 +107,131 @@ media700.onchange = (e) => {
     }
 }
 
-// check if any element is in the viewport //
+/** COLOR THEME SWITCHER */
+// hide bubbles when clicked outside
+function hideBubbles(e) {
+    let divContainer = e.target;
+    // loop until parent div container reached
+    do {
+        if (divContainer == themeSwitcherContainer) {
+            return;
+        }
+        // go up the DOM until parent div container
+        divContainer = divContainer.parentNode;
+    } while (divContainer);
+    // uncheck palette bubble
+    paletteBuble.checked = false;
+    // hide color bubbles when clicked outside parent div container
+    blueBubble.classList.remove('blue-bubble-move');
+    purpleBubble.classList.remove('purple-bubble-move');
+    greenBubble.classList.remove('green-bubble-move');
+    // remove event listener when bubbles are hide
+    document.removeEventListener('click', hideBubbles);
+}
+
+// activate palette bubble to show colors bubbles
+paletteBuble.addEventListener('click', (e) => {
+    blueBubble.classList.toggle('blue-bubble-move');
+    purpleBubble.classList.toggle('purple-bubble-move');
+    greenBubble.classList.toggle('green-bubble-move');
+    // check where clicked to hide bubbles
+    document.addEventListener('click', hideBubbles);
+});
+
+// switch cases to change color theme
+radioBtns.forEach((elem) => {
+    elem.addEventListener('click', (e) => {
+        if (toggleDarkTheme.checked) {
+            // create an array only with theme classes names
+            let classesNamesArr = classesArr.value.match(/[^\s]+/g);
+
+            // check if we click more than one time the same color to do nothing
+            if (!classesNamesArr.includes(`${elem.value}-theme`) && (classesNamesArr.length > 1 || elem.value !== 'blue')) {
+                if (classesNamesArr[0] === 'dark-theme') {
+                    if (classesNamesArr[1] === 'green-theme' || classesNamesArr[1] === 'purple-theme') {
+                        if (elem.value !== 'blue') {
+                            // only takes from array color themes to replace for
+                            // current bubble (radio-button) color
+                            classesArr.replace(classesNamesArr[1], `${elem.value}-theme`);
+                            classesArr.replace(classesNamesArr[2], `${elem.value}-dark-theme`);
+                            // call change img src function
+                            changeImg(elem.value, true);
+                        } else {
+                            classesArr.remove(classesNamesArr[1]);
+                            classesArr.remove(classesNamesArr[2]);
+                            // call change img src function
+                            changeImg('', false);
+                        }
+                    } else if (elem.value !== 'blue') {
+                        classesArr.add(`${elem.value}-theme`);
+                        classesArr.add(`${elem.value}-dark-theme`);
+                        // call change img src function
+                        changeImg(elem.value, true);
+                    }
+                } else {
+                    if (elem.value !== 'blue') {
+                        // only takes from array color themes to replace for
+                        // current bubble (radio-button) color
+                        classesArr.replace(classesNamesArr[0], `${elem.value}-theme`);
+                        classesArr.replace(classesNamesArr[2], `${elem.value}-dark-theme`);
+                        // call change img src function
+                        changeImg(elem.value, true);
+                    } else {
+                        classesArr.remove(classesNamesArr[0]);
+                        classesArr.remove(classesNamesArr[2]);
+                        // call change img src function
+                        changeImg('', false);
+                    }
+                }
+            }
+        } else {
+            if (classesArr.value === '' && elem.value !== 'blue') {
+                classesArr.add(`${elem.value}-theme`);
+                // call change img src function
+                changeImg(elem.value, true);
+            } else {
+                let colorThemeName = classesArr.value.substring(0, classesArr.value.indexOf('-'));
+                // check if we click more than one time the same color to do nothing
+                if (elem.value != colorThemeName && colorThemeName != '') {
+                    if (elem.value === 'blue') {
+                        classesArr.remove(classesArr.value);
+                        // call change img src function
+                        changeImg('', false);
+                    } else {
+                        classesArr.replace(classesArr.value, `${elem.value}-theme`);
+                        // call change img src function
+                        changeImg(elem.value, true);
+                    }
+                }
+            }
+        }
+    });
+});
+
+// change img src
+function changeImg(radioBtnValue, underscoreYes) {
+    let underscore;
+    underscoreYes ? underscore = '_' : underscore = '';
+
+    headerLogo.setAttribute('src', `assets/logo/logo${underscore}${radioBtnValue}.svg`);
+    projFirstItem.setAttribute('src', `assets/icons/pc${underscore}${radioBtnValue}.svg`);
+    projLasttItem.setAttribute('src', `assets/icons/phone${underscore}${radioBtnValue}.svg`);
+}
+
+// change color for dark theme
+toggleDarkTheme.addEventListener('click', (e) => {
+    // always toggle dark theme
+    classesArr.toggle('dark-theme');
+    // check for others colors themes
+    if (classesArr.value !== 'dark-theme' && classesArr.value !== '') {
+        //extract the color theme name from the root classes
+        let colorThemeName = classesArr.value.substring(0, classesArr.value.indexOf('-'));
+        classesArr.toggle(`${colorThemeName}-dark-theme`);
+    }
+});
+
+
+// check if any element is in the viewport
 function isAnyPartOfElementInViewport(element) {
     const rect = element.getBoundingClientRect();
     const vertInView = rect.top <= windowHeight && rect.top + rect.height >= 0;
@@ -110,14 +244,14 @@ let delay = 0;
 // making them visible while scrolling
 function scrollHandler() {
     document
-        .querySelectorAll(".show-on-scroll:not(.is-visible)")
+        .querySelectorAll('.show-on-scroll:not(.is-visible)')
         .forEach((element) => {
             setTimeout(function () {
                 if (
                     isAnyPartOfElementInViewport(element) &&
-                    !element.classList.contains("is-visible")
+                    !element.classList.contains('is-visible')
                 ) {
-                    element.classList.add("is-visible");
+                    element.classList.add('is-visible');
                 }
             }, delay);
 
@@ -125,7 +259,7 @@ function scrollHandler() {
         });
 }
 
-window.addEventListener("scroll", scrollHandler);
+window.addEventListener('scroll', scrollHandler);
 
 // call the scroll handler function at first load to show elements that
 // is already in the viewport

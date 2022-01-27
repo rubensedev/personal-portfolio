@@ -1,13 +1,14 @@
 PARA NO OLVIDAR
-+ Añadiendo al menú botones de cambio de idioma y tema
++ Añadiendo al menú botón de cambio de tema
     - Mirar error en javascript
     - Quitar código de haber quitado el logo animado del menu
-    https://codepen.io/rubensedev/pen/RwLmmrm?editors=1100
+
+- Mirar menu y ensanchar los <a> dentro de los li
+- Mirar error safari
 
 COMPROBAR AL FINAL
 
 AÑADIR FUTURO
-- Añadir botón con cambio de temas, nuevos colores
 - Añadir traducción al español
 
 - Crear clases para los projects cards en js, y modules
