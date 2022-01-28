@@ -1,10 +1,8 @@
 PARA NO OLVIDAR
-+ Añadiendo al menú botón de cambio de tema
-    - Mirar error en javascript
-    - Quitar código de haber quitado el logo animado del menu
-
-- Mirar menu y ensanchar los <a> dentro de los li
+- Mirar menu
 - Mirar error safari
+
+- Cambiar tamaño img que sale en OG image. Crear na captura de pantalla personalizada y buscar tamaño correcto
 
 COMPROBAR AL FINAL
 

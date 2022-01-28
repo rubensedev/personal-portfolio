@@ -12,7 +12,7 @@ const br = document.createElement('br');
 const menuBtn = document.querySelector('#navi-toggle');
 const nav = document.querySelector('#nav-id');
 const ul = document.querySelector('#ul');
-const li = document.querySelectorAll('#nav-id li');
+const a = document.querySelectorAll('#nav-id li a');
 const media700 = window.matchMedia('(max-width: 700px)');
 
 // close menu when a section is clicked
@@ -41,13 +41,6 @@ const headerLogo = document.querySelector('#header-logo');
 const projFirstItem = document.querySelector('#item1-img');
 const projLasttItem = document.querySelector('#itemn-img');
 
-// insert an animated logo in menu when activated
-let animatedLogoDiv = document.createElement('div');
-animatedLogoDiv.innerHTML = `<div class="box-common small top-left"></div>
-                            <div class="box-common big top-right"></div>
-                            <div class="box-common big bottom-left"></div>
-                            <div class="box-common small bottom-right"></div>`;
-
 // check a specific media query to insert a break after Rubén in intro-section
 function addDeleteBr(e) {
     e.matches ? span.prepend(br) : br.remove();;
@@ -64,39 +57,26 @@ menuBtn.addEventListener('change', (e) => {
         document.querySelector('body').style.overflowY = 'hidden';
         nav.classList.add('nav-checkbox-checked');
 
-        // insert animated logo
-        // nav.append(animatedLogoDiv);
-        // animatedLogoDiv.classList.add('flex', 'wrap', 'animated-logo-container', 'animated-logo-container-menu');
-
         /* close menu when a section is clicked */
         // when header logo is clicked
         logoContainer.addEventListener('click', (e) => {
             menuBtn.checked = false;
             document.querySelector('body').style.overflow = 'auto';
             nav.classList.remove('nav-checkbox-checked');
-
-            // delete animated logo
-            nav.removeChild(animatedLogoDiv);
         });
 
         // when a tag from nav panel is clicked
-        li.forEach(item => {
+        a.forEach(item => {
             item.addEventListener('click', (e) => {
                 menuBtn.checked = false;
                 document.querySelector('body').style.overflow = 'auto';
                 nav.classList.remove('nav-checkbox-checked');
-
-                // delete animated logo
-                nav.removeChild(animatedLogoDiv);
             });
         });
     } else {
         // hamburguer menu desactivated
         document.querySelector('body').style.overflowY = 'auto';
         nav.classList.remove('nav-checkbox-checked');
-
-        // delete animated logo
-        nav.removeChild(animatedLogoDiv);
     }
 });
 
@@ -106,7 +86,6 @@ media700.onchange = (e) => {
         menuBtn.checked = false;
         document.querySelector('body').style.overflow = 'auto';
         nav.classList.remove('nav-checkbox-checked');
-        nav.removeChild(animatedLogoDiv);
     }
 }
 
@@ -133,17 +112,12 @@ function hideBubbles(e) {
 }
 
 // change meta tag theme color
-function changeThemeColorMetaTag(color, darkTheme) {
+function changeThemeColorMetaTag(color) {
     const metaThemeColor = document.querySelector('meta[name="theme-color"]');
     const metaThemeColorSafari = document.querySelector('meta[name="apple-mobile-web-app-status-bar-style"]');
 
-    if (!darkTheme) {
-        metaThemeColor.setAttribute('content', color.substring(1));
-        metaThemeColorSafari.setAttribute('content', color.substring(1));
-    } else {
-        metaThemeColor.setAttribute('content', color.substring(1));
-        metaThemeColorSafari.setAttribute('content', color.substring(1));
-    }
+    metaThemeColor.setAttribute('content', color.substring(1));
+    metaThemeColorSafari.setAttribute('content', color.substring(1));
 }
 
 // activate palette bubble to show colors bubbles
@@ -173,7 +147,7 @@ radioBtns.forEach((elem) => {
                             classesArr.replace(classesNamesArr[2], `${elem.value}-dark-theme`);
                             // change meta tag theme color
                             darkPrimaryColorValue = getComputedStyle(html).getPropertyValue('--blue-container');
-                            changeThemeColorMetaTag(darkPrimaryColorValue, true);
+                            changeThemeColorMetaTag(darkPrimaryColorValue);
                             // call change img src function
                             changeImg(elem.value, true);
                         } else {
@@ -181,7 +155,7 @@ radioBtns.forEach((elem) => {
                             classesArr.remove(classesNamesArr[2]);
                             // change meta tag theme color
                             darkPrimaryColorValue = getComputedStyle(html).getPropertyValue('--blue-container');
-                            changeThemeColorMetaTag(darkPrimaryColorValue, true);
+                            changeThemeColorMetaTag(darkPrimaryColorValue);
                             // call change img src function
                             changeImg('', false);
                         }
@@ -190,7 +164,7 @@ radioBtns.forEach((elem) => {
                         classesArr.add(`${elem.value}-dark-theme`);
                         // change meta tag theme color
                         darkPrimaryColorValue = getComputedStyle(html).getPropertyValue('--blue-container');
-                        changeThemeColorMetaTag(darkPrimaryColorValue, true);
+                        changeThemeColorMetaTag(darkPrimaryColorValue);
                         // call change img src function
                         changeImg(elem.value, true);
                     }
@@ -202,7 +176,7 @@ radioBtns.forEach((elem) => {
                         classesArr.replace(classesNamesArr[2], `${elem.value}-dark-theme`);
                         // change meta tag theme color
                         darkPrimaryColorValue = getComputedStyle(html).getPropertyValue('--blue-container');
-                        changeThemeColorMetaTag(darkPrimaryColorValue, true);
+                        changeThemeColorMetaTag(darkPrimaryColorValue);
                         // call change img src function
                         changeImg(elem.value, true);
                     } else {
@@ -210,7 +184,7 @@ radioBtns.forEach((elem) => {
                         classesArr.remove(classesNamesArr[2]);
                         // change meta tag theme color
                         darkPrimaryColorValue = getComputedStyle(html).getPropertyValue('--blue-container');
-                        changeThemeColorMetaTag(darkPrimaryColorValue, true);
+                        changeThemeColorMetaTag(darkPrimaryColorValue);
                         // call change img src function
                         changeImg('', false);
                     }
@@ -221,7 +195,7 @@ radioBtns.forEach((elem) => {
                 classesArr.add(`${elem.value}-theme`);
                 // change meta tag theme color
                 primaryColorValue = getComputedStyle(html).getPropertyValue('--primary-color-blue');
-                changeThemeColorMetaTag(primaryColorValue, false);
+                changeThemeColorMetaTag(primaryColorValue);
                 // call change img src function
                 changeImg(elem.value, true);
             } else {
@@ -232,14 +206,14 @@ radioBtns.forEach((elem) => {
                         classesArr.remove(classesArr.value);
                         // change meta tag theme color
                         primaryColorValue = getComputedStyle(html).getPropertyValue('--primary-color-blue');
-                        changeThemeColorMetaTag(primaryColorValue, false);
+                        changeThemeColorMetaTag(primaryColorValue);
                         // call change img src function
                         changeImg('', false);
                     } else {
                         classesArr.replace(classesArr.value, `${elem.value}-theme`);
                         // change meta tag theme color
                         primaryColorValue = getComputedStyle(html).getPropertyValue('--primary-color-blue');
-                        changeThemeColorMetaTag(primaryColorValue, false);
+                        changeThemeColorMetaTag(primaryColorValue);
                         // call change img src function
                         changeImg(elem.value, true);
                     }
@@ -265,7 +239,7 @@ toggleDarkTheme.addEventListener('click', (e) => {
     classesArr.toggle('dark-theme');
     // change meta tag theme color
     darkPrimaryColorValue = getComputedStyle(html).getPropertyValue('--blue-container');
-    changeThemeColorMetaTag(darkPrimaryColorValue, true);
+    changeThemeColorMetaTag(darkPrimaryColorValue);
     // check for others colors themes
     if (classesArr.value !== 'dark-theme' && classesArr.value !== '') {
         //extract the color theme name from the root classes
@@ -273,7 +247,7 @@ toggleDarkTheme.addEventListener('click', (e) => {
         classesArr.toggle(`${colorThemeName}-dark-theme`);
         // change meta tag theme color
         darkPrimaryColorValue = getComputedStyle(html).getPropertyValue('--blue-container');
-        changeThemeColorMetaTag(darkPrimaryColorValue, true);
+        changeThemeColorMetaTag(darkPrimaryColorValue);
     }
 });
 

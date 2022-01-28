@@ -312,8 +312,8 @@ input {
 .nav-item a {
   padding: 2.2rem 0;
 }
-.nav-item:hover,
-.nav-item:active {
+.nav-item a:hover,
+.nav-item a:active {
   color: var(--primary-color-blue);
 }
 
