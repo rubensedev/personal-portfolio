@@ -24,6 +24,7 @@
 .switch-container {
   bottom: 2.5rem;
   right: 1.5rem;
+  transition: transform 0.5s;
 }
 #color-theme-switch-label {
   font-size: 2.5rem;
@@ -72,9 +73,11 @@
 
 #green-theme-label {
   background-color: #006c49;
+  /* opacity: 0; */
   transition: transform 0.9s;
 }
 .green-bubble-move {
+  /* opacity: 1 !important; */
   transform: translate(10px, -70px);
 }
 #blue-theme-label {

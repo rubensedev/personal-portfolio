@@ -41,6 +41,23 @@ const headerLogo = document.querySelector('#header-logo');
 const projFirstItem = document.querySelector('#item1-img');
 const projLasttItem = document.querySelector('#itemn-img');
 
+// window.addEventListener('scroll', (e) => {
+//     if (this.oldScroll > this.scrollY) {
+//         // scroll upp
+//         document.querySelector('.switch-container').style.transform = 'translateY(0)';
+//         blueBubble.style.transform = 'translateY(0)';
+//         purpleBubble.style.transform = 'translateY(0)';
+//         greenBubble.style.transform = 'translateY(0)';
+//     } else {
+//         //scroll down
+//         document.querySelector('.switch-container').style.transform = 'translateY(100px)';
+//         blueBubble.style.transform = 'translateY(100px)';
+//         purpleBubble.style.transform = 'translateY(100px)';
+//         greenBubble.style.transform = 'translateY(100px)';
+//     }
+//     this.oldScroll = this.scrollY;
+// });
+
 // check a specific media query to insert a break after Rubén in intro-section
 function addDeleteBr(e) {
     e.matches ? span.prepend(br) : br.remove();;
