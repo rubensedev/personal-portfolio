@@ -488,7 +488,8 @@ input {
 .contact-section {
   gap: 5rem;
   height: 100vh;
-  padding-top: 0;
+  padding-left: 5vw;
+  padding-right: 5vw;
 }
 .underline:hover,
 .underline:active {

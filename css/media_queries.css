@@ -62,9 +62,6 @@
   #logo-name {
     font-size: 2.6rem;
   }
-  .nav-switch-container {
-    gap: 2rem;
-  }
   .nav-list {
     gap: 2rem;
   }
@@ -164,6 +161,10 @@
     min-height: 62rem;
     padding: 0 1.5rem 5rem 1.5rem;
   }
+  #item1 img,
+  #itemn img {
+    height: 20rem;
+  }
 
   /* contact-section */
   .contact-section-btns-social {
@@ -195,7 +196,6 @@
 
   /* contact-section */
   .contact-section {
-    justify-content: flex-start;
     min-height: 67rem;
     gap: 2.5rem;
   }
@@ -222,7 +222,6 @@
   /* contact-section */
   .contact-section {
     min-height: 50rem;
-    justify-content: flex-start;
   }
   .contact-section-btns-social {
     flex-direction: row;
@@ -240,9 +239,5 @@
 @media only screen and (min-width: 900px) and (min-height: 500px) {
   .intro-section {
     align-items: center;
-  }
-
-  .contact-section {
-    justify-content: center;
   }
 }

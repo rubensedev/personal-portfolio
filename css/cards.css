@@ -36,28 +36,28 @@
   grid-row: 1/3;
 }
 #item2:before {
-  background-image: url(../assets/projects_cards/personal_portfolio.png);
+  background-image: url(../assets/projects_cards/personal_portfolio.jpg);
 }
 
 #item3 {
   grid-row: 2/4;
 }
 #item3:before {
-  background-image: url(../assets/projects_cards/technical_documentation_page.png);
+  background-image: url(../assets/projects_cards/technical_documentation_page.jpg);
 }
 
 #item4 {
   grid-row: 3/5;
 }
 #item4:before {
-  background-image: url(../assets/projects_cards/product_landing_page.png);
+  background-image: url(../assets/projects_cards/product_landing_page.jpg);
 }
 
 #item5 {
   grid-row: 4/6;
 }
 #item5:before {
-  background-image: url(../assets/projects_cards/sign_up_form.png);
+  background-image: url(../assets/projects_cards/sign_up_form.jpg);
 }
 
 .card {

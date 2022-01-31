@@ -13,7 +13,7 @@
 }
 .bubble {
   border-radius: 100%;
-  box-shadow: 0 0.5rem 1rem 0 rgb(0 0 0 / 60%);
+  box-shadow: 0 0.5rem 1rem 0 rgb(0 0 0 / 30%);
   cursor: pointer;
 }
 .position-absolute {
