@@ -26,7 +26,7 @@ const windowWidth = window.innerWidth || document.documentElement.clientWidth;
 /** COLOR THEME SWITCHER */
 // btns theme switcher
 const themeSwitcherContainer = document.querySelector('#theme-switcher-container');
-const paletteBuble = document.querySelector('#color-theme-switch');
+const paletteBuble = document.querySelector('#palette-input');
 const colorsBubblesContainer = document.querySelector('#bubbles-container');
 const radioBtns = colorsBubblesContainer.querySelectorAll('input');
 const blueBubble = document.querySelector('#blue-theme-label');
@@ -41,22 +41,20 @@ const headerLogo = document.querySelector('#header-logo');
 const projFirstItem = document.querySelector('#item1-img');
 const projLasttItem = document.querySelector('#itemn-img');
 
-// window.addEventListener('scroll', (e) => {
-//     if (this.oldScroll > this.scrollY) {
-//         // scroll up
-//         document.querySelector('#theme-switcher-container').style.transform = 'translateY(0)';
-//         blueBubble.style.transform = 'translateY(0)';
-//         purpleBubble.style.transform = 'translateY(0)';
-//         greenBubble.style.transform = 'translateY(0)';
-//     } else {
-//         //scroll down
-//         document.querySelector('#theme-switcher-container').style.transform = 'translateY(100px)';
-//         blueBubble.style.transform = 'translateY(100px)';
-//         purpleBubble.style.transform = 'translateY(100px)';
-//         greenBubble.style.transform = 'translateY(100px)';
-//     }
-//     this.oldScroll = this.scrollY;
-// });
+// listener to scrolling to hide palette and colors bubbles
+window.addEventListener('scroll', (e) => {
+    if (this.oldScroll > this.scrollY) {
+        // scroll up
+        themeSwitcherContainer.style.transform = 'translateY(0)';
+    } else {
+        //scroll down
+        themeSwitcherContainer.style.transform = 'translateY(100px)';
+    }
+    // compare scroll
+    this.oldScroll = this.scrollY;
+    // hide bubbles when scrolling
+    document.addEventListener('scroll', hideBubbles);
+});
 
 // check a specific media query to insert a break after Rubén in intro-section
 function addDeleteBr(e) {
