@@ -43,14 +43,14 @@ const projLasttItem = document.querySelector('#itemn-img');
 
 // window.addEventListener('scroll', (e) => {
 //     if (this.oldScroll > this.scrollY) {
-//         // scroll upp
-//         document.querySelector('.switch-container').style.transform = 'translateY(0)';
+//         // scroll up
+//         document.querySelector('#theme-switcher-container').style.transform = 'translateY(0)';
 //         blueBubble.style.transform = 'translateY(0)';
 //         purpleBubble.style.transform = 'translateY(0)';
 //         greenBubble.style.transform = 'translateY(0)';
 //     } else {
 //         //scroll down
-//         document.querySelector('.switch-container').style.transform = 'translateY(100px)';
+//         document.querySelector('#theme-switcher-container').style.transform = 'translateY(100px)';
 //         blueBubble.style.transform = 'translateY(100px)';
 //         purpleBubble.style.transform = 'translateY(100px)';
 //         greenBubble.style.transform = 'translateY(100px)';

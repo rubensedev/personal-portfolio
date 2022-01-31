@@ -2,7 +2,7 @@ PARA NO OLVIDAR
 - Mirar menu
 - Mirar error safari
 
-- Cambiar tamaño img que sale en OG image. Crear na captura de pantalla personalizada y buscar tamaño correcto
+- Cambiar tamaño img que sale en OG image. Crear una captura de pantalla personalizada y buscar tamaño correcto
 
 COMPROBAR AL FINAL
 
