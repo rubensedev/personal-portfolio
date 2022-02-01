@@ -11,7 +11,6 @@ const br = document.createElement('br');
 // menu btn
 const menuBtn = document.querySelector('#navi-toggle');
 const nav = document.querySelector('#nav-id');
-const ul = document.querySelector('#ul');
 const a = document.querySelectorAll('#nav-id li a');
 const media700 = window.matchMedia('(max-width: 700px)');
 
