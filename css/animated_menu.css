@@ -22,27 +22,71 @@
     position: relative;
     z-index: -500;
     border-radius: 50%;
-    background-color: var(--white);
+    /* background-color: var(--white); */
     transition: transform 0.8s cubic-bezier(0.86, 0, 0.07, 1), background-color 0.5s ease-in-out;
   }
 
   /* menu */
   .nav-mobile {
     position: absolute;
-    top: 12rem;
+    /* top: 8.4vh; */
+    top: 0;
     left: 0;
     right: 0;
     margin: 0 auto;
-    width: auto;
+    padding-top: 15rem;
+    margin-left: 2.5vw;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* height: 91.6vh; */
+    border-top-left-radius: 3.5rem;
+    border-bottom-left-radius: 3.5rem;
+    height: 100vh;
+    z-index: -200;
     transform: translateX(50rem);
-    transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    background-color: var(--yellow);
+    transition: background-color 0.5s ease-in-out,
+      transform 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   }
   .nav-list {
     flex-direction: column;
+    gap: 5vh !important;
   }
   .nav-item {
     font-size: 2.5rem;
     padding: 0;
+    color: var(--blue-text-color);
+  }
+  .nav-item a:hover,
+  .nav-item a:active {
+    color: var(--white-always);
+  }
+
+  /* nav-menu-footer */
+  .nav-menu-footer {
+    display: flex;
+    gap: 10vh;
+  }
+  .nav-menu-footer-bottom {
+    background-color: var(--blue-container);
+    width: 100%;
+    min-height: 20vh;
+    border-bottom-left-radius: 3.5rem;
+    transition: background-color 0.5s ease-in-out;
+  }
+  /* send email button - MENU */
+  .btn-email-menu {
+    border-color: var(--dark-yellow);
+    color: var(--dark-yellow);
+  }
+  .btn-email-menu::after {
+    background-color: var(--white-always);
+  }
+  .btn-email-menu:hover,
+  .btn-email-menu:active {
+    color: var(--white-always);
   }
 
   /* FUNCTIONALITY */

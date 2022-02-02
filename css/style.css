@@ -42,7 +42,6 @@
   --yellow: #a5cdde;
   --dark-yellow: #063543;
   --grey: #707972;
-  --woma: #dce5dd; /* probar para el fondo del menú */
 }
 .dark-theme {
   --black: #fff;
@@ -316,6 +315,10 @@ input {
 .nav-item a:active {
   color: var(--primary-color-blue);
 }
+/* nav-menu-footer */
+.nav-menu-footer {
+  display: none;
+}
 
 /* menu-btn-container */
 .menu-btn-container {
@@ -522,10 +525,6 @@ input {
 .btn-github::after,
 .btn-codepen::after {
   background-color: #000;
-}
-
-.contact-section-btns-email {
-  flex-direction: column;
 }
 /* send email button */
 .btn-email {
