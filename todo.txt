@@ -1,13 +1,8 @@
 PARA NO OLVIDAR
-- Modificando menú
-    + ARREGLANDO BOTÓN enviar email DE DENTRO DEL MENÚ
-
-- Mirar error safari
+- Mirar compatibilidad con safari
 
 - Cambiar tamaño img que sale en OG image. Crear una captura de pantalla personalizada y buscar tamaño correcto
 - Mirar el background animado
-
-- Cambiar borde botones en modo oscuro
 
 COMPROBAR AL FINAL
 

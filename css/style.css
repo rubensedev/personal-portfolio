@@ -515,12 +515,16 @@ input {
 /* gitHub button */
 .btn-github,
 .btn-codepen {
-  border-color: #000;
+  border-color: var(--black);
   color: var(--black-text-color);
 }
 /* style inside a card project */
 .card-btn-container > a.btn-github {
+  border-color: var(--primary-color-blue);
   color: var(--white-always);
+}
+.card-btn-container > a.btn-github:hover {
+  border: 0.2rem solid transparent;
 }
 .btn-github::after,
 .btn-codepen::after {
@@ -529,7 +533,7 @@ input {
 /* send email button */
 .btn-email {
   width: 100%;
-  border-color: var(--yellow);
+  border-color: var(--dark-yellow);
   color: var(--dark-yellow);
 }
 .btn-email::after {
