@@ -35,7 +35,7 @@
 /* individual styles */
 .container-circles div {
   position: absolute;
-  background: var(--blue-container);
+  background: var(--primary-color-blue);
   transition: background-color 0.5s ease-in-out;
   animation: animate 25s linear infinite;
   bottom: -10rem;
