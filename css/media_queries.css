@@ -30,11 +30,6 @@
     margin: 0 10vw;
   }
 
-  /* about-section */
-  .about-section-content {
-    width: 90vw;
-  }
-
   /* projects-section */
   .cards-container {
     gap: 6rem;

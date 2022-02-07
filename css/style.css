@@ -457,7 +457,6 @@ input {
 }
 
 .about-section-content {
-  width: 80vw;
   padding: 3rem 5rem 5rem 5rem;
   border-radius: 2rem;
   background-color: var(--light-blue);

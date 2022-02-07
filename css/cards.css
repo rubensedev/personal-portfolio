@@ -60,6 +60,7 @@
   background-image: url(../assets/projects_cards/sign_up_form.jpg);
 }
 
+/* card */
 .card {
   position: relative;
   align-items: flex-end;
@@ -70,7 +71,6 @@
   color: var(--white-always);
   transition: box-shadow 0.5s, opacity 1.25s, background-color 1.5s cubic-bezier(0.19, 1, 0.22, 1);
 }
-
 .card:before {
   content: "";
   position: absolute;
@@ -84,14 +84,12 @@
     opacity 0.5s cubic-bezier(0.19, 1, 0.22, 1);
   pointer-events: none;
 }
-
 .card-content {
   position: relative;
   transition: transform 1.5s cubic-bezier(0.19, 1, 0.22, 1);
   transform: translateY(calc(100% - 4.5rem));
   z-index: 0;
 }
-
 .card-title {
   padding: 1rem;
   margin-bottom: 1rem;
@@ -100,7 +98,6 @@
   line-height: 3rem;
   transition: background-color 0.5s ease-in-out;
 }
-
 .card-sub-title {
   padding: 0;
   margin-bottom: 2rem;
@@ -137,28 +134,29 @@
   gap: 1rem;
 }
 
+/* hovering */
 .card-content > *:not(.card-title) {
   opacity: 0;
   transform: translateY(1rem);
   transition: transform 1s cubic-bezier(0.19, 1, 0.22, 1), opacity 1s cubic-bezier(0.19, 1, 0.22, 1);
 }
 .card:hover,
-.card:focus-within {
+.card:active {
   align-items: center;
   box-shadow: 0 0rem 1.5rem 1rem rgb(0 0 0 / 80%);
   background-color: var(--dark-blue);
 }
 .card:hover:before,
-.card:focus-within:before {
+.card:active:before {
   transform: translateY(-25%);
   opacity: 0;
 }
 .card:hover .card-content,
-.card:focus-within .card-content {
+.card:active .card-content {
   transform: translateY(0);
 }
 .card:hover .card-content > *:not(.card-title),
-.card:focus-within .card-content > *:not(.card-title) {
+.card:active .card-content > *:not(.card-title) {
   opacity: 1;
   transform: translateY(0);
   transition-delay: calc(1s / 7);

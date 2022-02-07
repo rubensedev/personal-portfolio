@@ -52,53 +52,53 @@
 /* boxes animations */
 @keyframes slide-top-left {
   0% {
-    transform: translateY(0) translateX(0) rotate(0);
+    transform: translate3d(0) rotate(0);
   }
   50% {
-    transform: translateY(-2rem) translateX(-2rem) rotate(10deg);
-    box-shadow: 0 0.5rem 1rem 0 var(--blue-container);
+    transform: translate3d(-2rem, -2rem, 4rem) rotate(10deg);
+    box-shadow: 0 0.5rem 1rem 0 var(--black-always);
   }
   100% {
-    transform: translateY(0) translateX(0) rotate(0);
+    transform: translate3d(0) rotate(0);
   }
 }
 
 @keyframes slide-top-right {
   0% {
-    transform: translateY(0) translateX(0) rotate(0);
+    transform: translate3d(0) rotate(0);
   }
   50% {
-    transform: translateY(-4rem) translateX(2rem) rotate(-10deg);
-    box-shadow: 0 0.5rem 1rem 0 rgb(34 108 224 / 20%);
+    transform: translate3d(2rem, -4rem, 4rem) rotate(-10deg);
+    box-shadow: 0 0.5rem 1rem 0 var(--black-always);
   }
   100% {
-    transform: translateY(0) translateX(0) rotate(0);
+    transform: translate3d(0) rotate(0);
   }
 }
 
 @keyframes slide-bottom-left {
   0% {
-    transform: translateY(0) translateX(0) rotate(0);
+    transform: translate3d(0) rotate(0);
   }
   50% {
-    transform: translateY(4rem) translateX(-2rem) rotate(30deg);
-    box-shadow: 0 0.5rem 1rem 0 rgb(34 108 224 / 20%);
+    transform: translate3d(-2rem, 4rem, 4rem) rotate(30deg);
+    box-shadow: 0 0.5rem 1rem 0 var(--black-always);
   }
   100% {
-    transform: translateY(0) translateX(0) rotate(0);
+    transform: translate3d(0) rotate(0);
   }
 }
 
 @keyframes slide-bottom-right {
   0% {
-    transform: translateY(0) translateX(0) rotate(0);
+    transform: translate3d(0) rotate(0);
   }
   50% {
-    transform: translateY(1rem) translateX(4rem) rotate(-25deg);
-    box-shadow: 0 0.5rem 1rem 0 rgb(34 108 224 / 20%);
+    transform: translate3d(4rem, 1rem, 4rem) rotate(-25deg);
+    box-shadow: 0 0.5rem 1rem 0 var(--black-always);
   }
   100% {
-    transform: translateY(0) translateX(0) rotate(0);
+    transform: translate3d(0) rotate(0);
   }
 }
 
@@ -143,25 +143,29 @@
   /* boxes animations */
   @keyframes slide-top-left {
     50% {
-      transform: translateY(-1rem) translateX(-1rem) rotate(10deg);
+      transform: translate3d(-1rem, -1rem, 4rem) rotate(10deg);
+      box-shadow: 0 0.5rem 1rem 0 var(--black-always);
     }
   }
 
   @keyframes slide-top-right {
     50% {
-      transform: translateY(-2rem) translateX(1rem) rotate(-10deg);
+      transform: translate3d(1rem, -2rem, 4rem) rotate(-10deg);
+      box-shadow: 0 0.5rem 1rem 0 var(--black-always);
     }
   }
 
   @keyframes slide-bottom-left {
     50% {
-      transform: translateY(2rem) translateX(-1rem) rotate(30deg);
+      transform: translate3d(-1rem, 2rem, 4rem) rotate(30deg);
+      box-shadow: 0 0.5rem 1rem 0 var(--black-always);
     }
   }
 
   @keyframes slide-bottom-right {
     50% {
-      transform: translateY(0.5rem) translateX(2rem) rotate(-25deg);
+      transform: translate3d(2rem, 0.5rem, 4rem) rotate(-25deg);
+      box-shadow: 0 0.5rem 1rem 0 var(--black-always);
     }
   }
 }
