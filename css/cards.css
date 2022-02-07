@@ -135,7 +135,7 @@
 }
 
 /* hovering */
-.card-content :not(.card-title) {
+.card-content > *:not(.card-title) {
   opacity: 0;
   transform: translateY(1rem);
   transition: transform 1s cubic-bezier(0.19, 1, 0.22, 1), opacity 1s cubic-bezier(0.19, 1, 0.22, 1);
