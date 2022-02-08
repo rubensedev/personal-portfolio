@@ -1,8 +1,6 @@
 PARA NO OLVIDAR
 - Mirar compatibilidad con safari
 
-- Cambiar tamaño img que sale en OG image. Crear una captura de pantalla personalizada y buscar tamaño correcto
-
 COMPROBAR AL FINAL
 
 AÑADIR FUTURO

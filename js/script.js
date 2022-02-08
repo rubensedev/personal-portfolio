@@ -57,7 +57,7 @@ window.addEventListener('scroll', (e) => {
 
 // check a specific media query to insert a break after Rubén in intro-section
 function addDeleteBr(e) {
-    e.matches ? span.prepend(br) : br.remove();;
+    e.matches ? span.prepend(br) : br.remove();
 }
 // when media matches
 addDeleteBr(media450);
