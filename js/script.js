@@ -47,7 +47,7 @@ window.addEventListener('scroll', (e) => {
         themeSwitcherContainer.style.transform = 'translateY(0)';
     } else {
         //scroll down
-        themeSwitcherContainer.style.transform = 'translateY(100px)';
+        themeSwitcherContainer.style.transform = 'translateY(10rem)';
     }
     // compare scroll
     this.oldScroll = this.scrollY;
