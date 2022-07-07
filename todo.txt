@@ -4,9 +4,5 @@ PARA NO OLVIDAR
 COMPROBAR AL FINAL
 
 AÑADIR FUTURO
-- Añadir traducción al español
-
 - Crear clases para los projects cards en js, y modules
 - Poner una cita de un personaje que me guste o incluso el proyecto de generador de citas de freecodecamp en la parte de contacta conmigo.
-
-- Crear blog de cada elementos de diseño en css
