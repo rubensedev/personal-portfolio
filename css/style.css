@@ -496,7 +496,7 @@ input {
 }
 .underline:hover,
 .underline:active {
-  text-decoration: underline;
+  text-decoration: underline var(--yellow);
   cursor: pointer;
 }
 .contact-section-btns,

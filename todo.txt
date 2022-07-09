@@ -1,8 +1,0 @@
-PARA NO OLVIDAR
-- Mirar compatibilidad con safari
-
-COMPROBAR AL FINAL
-
-AÑADIR FUTURO
-- Crear clases para los projects cards en js, y modules
-- Poner una cita de un personaje que me guste o incluso el proyecto de generador de citas de freecodecamp en la parte de contacta conmigo.
