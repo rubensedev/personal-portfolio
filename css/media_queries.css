@@ -162,6 +162,9 @@
   }
 
   /* contact-section */
+  .contact-section-btns {
+    width: 80%;
+  }
   .contact-section-btns-social {
     flex-direction: column;
     align-items: stretch;
@@ -193,6 +196,9 @@
   .contact-section {
     min-height: 67rem;
     gap: 2.5rem;
+  }
+  .contact-section-btns {
+    width: 100%;
   }
 }
 

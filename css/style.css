@@ -220,6 +220,7 @@ input {
   will-change: transform;
   z-index: 0;
   text-align: center;
+  cursor: pointer;
 }
 
 .btn:hover::after,
@@ -496,10 +497,52 @@ input {
 .underline:hover,
 .underline:active {
   text-decoration: underline;
+  cursor: pointer;
 }
 .contact-section-btns,
 .contact-section-btns-social {
   gap: 2.5rem;
+}
+/* tooltip */
+.tooltip {
+  position: relative;
+}
+.tooltip:before {
+  content: attr(data-tooltipText);
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 11rem;
+  transform: translateX(-50%);
+  margin-top: -3.5rem;
+  border-radius: 0.8rem;
+  background: var(--yellow);
+  color: var(--dark-yellow);
+  text-align: center;
+  font-size: 1.5rem;
+  opacity: 0;
+  transition: 0.3s opacity;
+}
+.tooltip:hover:before {
+  display: block;
+  opacity: 1;
+}
+.tooltip:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: -0.3rem;
+  border: 10px solid var(--yellow);
+  border-color: var(--yellow) transparent transparent transparent;
+  opacity: 0;
+  transition: 0.3s;
+}
+.tooltip:hover:before,
+.tooltip:hover:after {
+  display: block;
+  opacity: 1;
 }
 
 /* linkedIn button */
@@ -518,11 +561,13 @@ input {
   color: var(--black-text-color);
 }
 /* style inside a card project */
-.card-btn-container > a.btn-github {
+.card-btn-container > a.btn-github,
+.card-btn-container > a.btn-codepen {
   border-color: var(--primary-color-blue);
   color: var(--white-always);
 }
-.card-btn-container > a.btn-github:hover {
+.card-btn-container > a.btn-github:hover,
+.card-btn-container > a.btn-codepen:hover {
   border: 0.2rem solid transparent;
 }
 .btn-github::after,

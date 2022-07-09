@@ -265,6 +265,22 @@ toggleDarkTheme.addEventListener('click', (e) => {
     }
 });
 
+// copy to clipboard
+document.querySelectorAll('.copy').forEach(el => {
+    el.addEventListener('click', (e) => {
+        navigator.clipboard.writeText('rubensedeno@gmail.com');
+        // if it's the "send a message" btn
+        if (el.classList.contains('btn')) {
+            el.innerHTML = '<i class="fas fa-paper-plane"></i> Email copied, let\'s chat!';
+            // a timetout to change state of tooltip
+            setTimeout(() => { el.innerHTML = '<i class="fas fa-paper-plane"></i> Send me a message'; }, 1500);
+        }
+        el.setAttribute('data-tooltipText', 'Email copied!');
+        // a timetout to change state of tooltip
+        setTimeout(() => { el.setAttribute('data-tooltipText', 'Copy email'); }, 1500);
+    });
+});
+
 // check if any element is in the viewport
 function isAnyPartOfElementInViewport(element) {
     const rect = element.getBoundingClientRect();
