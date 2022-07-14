@@ -47,7 +47,7 @@
   --black: #fff;
   --blue-container: #002d6f;
   --dark-blue: #1a1c1e;
-  --light-blue: #2f3032;
+  --light-blue: #0d1628;
   --white: #1a1c1e;
   --black-text-color: #fff;
   --blue-text-color: #fff;
@@ -57,7 +57,7 @@
 .purple-dark-theme {
   --blue-container: #440089;
   --dark-blue: #1d1b1e;
-  --light-blue: #302f32;
+  --light-blue: #190a1e;
   --white: #1d1b1e;
   --yellow: #4b252b;
   --dark-yellow: #f2b7e1;
@@ -65,7 +65,7 @@
 .green-dark-theme {
   --blue-container: #003823;
   --dark-blue: #191c1a;
-  --light-blue: #2f3231;
+  --light-blue: #081a0d;
   --white: #191c1a;
   --yellow: #063543;
   --dark-yellow: #a5cdde;

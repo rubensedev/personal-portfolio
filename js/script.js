@@ -274,10 +274,15 @@ document.querySelectorAll('.copy').forEach(el => {
             el.innerHTML = '<i class="fas fa-paper-plane"></i> Email copied, let\'s chat!';
             // a timetout to change state of tooltip
             setTimeout(() => { el.innerHTML = '<i class="fas fa-paper-plane"></i> Send me a message'; }, 1500);
+        } else if (el.getAttribute('data-tooltipText') === 'Download CV') {
+            el.setAttribute('data-tooltipText', 'Downloaded!');
+            // a timetout to change state of tooltip
+            setTimeout(() => { el.setAttribute('data-tooltipText', 'Download CV'); }, 1500);
+        } else {
+            el.setAttribute('data-tooltipText', 'Email copied!');
+            // a timetout to change state of tooltip
+            setTimeout(() => { el.setAttribute('data-tooltipText', 'Copy email'); }, 1500);
         }
-        el.setAttribute('data-tooltipText', 'Email copied!');
-        // a timetout to change state of tooltip
-        setTimeout(() => { el.setAttribute('data-tooltipText', 'Copy email'); }, 1500);
     });
 });
 
